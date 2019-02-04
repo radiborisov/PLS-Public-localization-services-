@@ -1,0 +1,3 @@
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.1\PLSServer.csproj.CoreCompileInputs.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.1\PLSServer.AssemblyInfoInputs.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.1\PLSServer.AssemblyInfo.cs
