@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using PLSServer.Data;
+using PLSServer.DBContext.Data;
 
 namespace PLSServer
 {
@@ -27,9 +27,9 @@ namespace PLSServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DbServer>
+            services.AddDbContext<PLSDBContext>
                 (options => options.
-                UseSqlServer(this.
+                UseNpgsql(this.
                 Configuration.
                 GetConnectionString("DefaultConnection")));
 

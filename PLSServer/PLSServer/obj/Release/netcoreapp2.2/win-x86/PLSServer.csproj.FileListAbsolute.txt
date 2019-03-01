@@ -1,0 +1,17 @@
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\win-x86\hostpolicy.dll
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\win-x86\hostfxr.dll
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\win-x86\PLSServer.exe
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\win-x86\PLSServer.deps.json
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\win-x86\PLSServer.runtimeconfig.json
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\win-x86\PLSServer.runtimeconfig.dev.json
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\win-x86\PLSServer.dll
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\win-x86\PLSServer.pdb
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\win-x86\PLSServer.csprojAssemblyReference.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\win-x86\PLSServer.csproj.CoreCompileInputs.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\win-x86\PLSServer.RazorAssemblyInfo.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\win-x86\PLSServer.RazorAssemblyInfo.cs
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\win-x86\PLSServer.AssemblyInfoInputs.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\win-x86\PLSServer.AssemblyInfo.cs
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\win-x86\PLSServer.RazorTargetAssemblyInfo.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\win-x86\PLSServer.dll
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\win-x86\PLSServer.pdb

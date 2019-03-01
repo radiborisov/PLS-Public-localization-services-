@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PLSServer.Data;
+using PLSServer.DBContext.Data;
+using PLSServer.DBContext.Data.Models;
 
 namespace PLSServer.Controllers
 {
@@ -12,9 +13,9 @@ namespace PLSServer.Controllers
     [ApiController]
     public class ValuesController : ApiController
     {
-        private DbServer context;
+        private PLSDBContext context;
 
-        public ValuesController(DbServer context)
+        public ValuesController(PLSDBContext context)
         {
             this.context = context;
         }
@@ -23,7 +24,7 @@ namespace PLSServer.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Location>> Get()
         {
-            return this.context.Location.ToList();
+            return this.context.Locations.ToList();
         }
 
         // GET api/values/5
@@ -33,7 +34,7 @@ namespace PLSServer.Controllers
 
         public ActionResult<Location> Get(int id)
         {
-            var location = this.context.Location.FirstOrDefault(x => x.UserId == id);
+            var location = this.context.Locations.FirstOrDefault(x => x.UserId == id);
             if (location == null)
             {
                 return this.NotFound();
@@ -47,7 +48,7 @@ namespace PLSServer.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         public ActionResult<Location> Post([FromBody] Location userInfo)
         {
-            this.context.Location.Add(userInfo);
+            this.context.Locations.Add(userInfo);
             this.context.SaveChanges();
 
             return this.CreatedAtAction(nameof(Get), new { id = userInfo.UserId, userInfo });

@@ -1,0 +1,9 @@
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\EFCodeFirst.Infrastructure\bin\Release\netstandard2.0\EFCodeFirst.Infrastructure.deps.json
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\EFCodeFirst.Infrastructure\bin\Release\netstandard2.0\EFCodeFirst.Infrastructure.dll
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\EFCodeFirst.Infrastructure\obj\Release\netstandard2.0\EFCodeFirst.Infrastructure.csprojAssemblyReference.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\EFCodeFirst.Infrastructure\obj\Release\netstandard2.0\EFCodeFirst.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\EFCodeFirst.Infrastructure\obj\Release\netstandard2.0\EFCodeFirst.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\EFCodeFirst.Infrastructure\obj\Release\netstandard2.0\EFCodeFirst.Infrastructure.AssemblyInfo.cs
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\EFCodeFirst.Infrastructure\bin\Release\netstandard2.0\EFCodeFirst.Infrastructure.pdb
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\EFCodeFirst.Infrastructure\obj\Release\netstandard2.0\EFCodeFirst.Infrastructure.dll
+C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\EFCodeFirst.Infrastructure\obj\Release\netstandard2.0\EFCodeFirst.Infrastructure.pdb
