@@ -9,19 +9,24 @@ namespace PLSServer.DBContext.Data.Models
 {
     public class Location
     {
-        [Key]
+        [Key]      
+        [Column("id")]
         public int Id { get; set; }
-
+    
         [Required]
+        [Column("latitude")]
         public decimal Latitude { get; set; }
 
         [Required]
+        [Column("longitude")]
         public decimal Longitude { get; set; }
 
         [Required]
-        public decimal altitude { get; set; }
+        [Column("altitude")]
+        public decimal Altitude { get; set; }
 
         [Required]
+        [Column("userid")]
         public int UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]

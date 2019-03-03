@@ -12,3 +12,17 @@ C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-servic
 C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.RazorTargetAssemblyInfo.cache
 C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.dll
 C:\Users\bear_\Desktop\PublicLocalizationServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.pdb
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.csprojAssemblyReference.cache
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.csproj.CoreCompileInputs.cache
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.RazorAssemblyInfo.cache
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.RazorAssemblyInfo.cs
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.AssemblyInfoInputs.cache
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.AssemblyInfo.cs
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.dll
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.pdb
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\PLSServer.deps.json
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\PLSServer.runtimeconfig.json
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\PLSServer.runtimeconfig.dev.json
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\PLSServer.dll
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Release\netcoreapp2.2\PLSServer.pdb
+C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Release\netcoreapp2.2\PLSServer.RazorTargetAssemblyInfo.cache

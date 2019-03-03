@@ -21,15 +21,20 @@ namespace PLSServer.Migrations
             modelBuilder.Entity("PLSServer.DBContext.Data.Models.Location", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id");
 
-                    b.Property<decimal>("Latitude");
+                    b.Property<decimal>("Altitude")
+                        .HasColumnName("altitude");
 
-                    b.Property<decimal>("Longitude");
+                    b.Property<decimal>("Latitude")
+                        .HasColumnName("latitude");
 
-                    b.Property<int>("UserId");
+                    b.Property<decimal>("Longitude")
+                        .HasColumnName("longitude");
 
-                    b.Property<decimal>("altitude");
+                    b.Property<int>("UserId")
+                        .HasColumnName("userid");
 
                     b.HasKey("Id");
 
@@ -41,11 +46,14 @@ namespace PLSServer.Migrations
             modelBuilder.Entity("PLSServer.DBContext.Data.Models.User", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id");
 
-                    b.Property<bool>("IsOnline");
+                    b.Property<bool>("IsOnline")
+                        .HasColumnName("isonline");
 
                     b.Property<string>("PhoneNumber")
+                        .HasColumnName("phonenumber")
                         .HasMaxLength(10);
 
                     b.HasKey("Id");

@@ -13,7 +13,7 @@ namespace PLSServer.Controllers
     [ApiController]
     public class ValuesController : ApiController
     {
-        private PLSDBContext context;
+        PLSDBContext context;
 
         public ValuesController(PLSDBContext context)
         {
@@ -24,7 +24,11 @@ namespace PLSServer.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Location>> Get()
         {
-            return this.context.Locations.ToList();
+            using (context)
+            {
+                return this.context.Locations.ToList();
+
+            }
         }
 
         // GET api/values/5
@@ -34,12 +38,16 @@ namespace PLSServer.Controllers
 
         public ActionResult<Location> Get(int id)
         {
+            using (context)
+            {
             var location = this.context.Locations.FirstOrDefault(x => x.UserId == id);
             if (location == null)
             {
                 return this.NotFound();
             }
             return location;
+
+            }
         }
 
 
@@ -48,10 +56,13 @@ namespace PLSServer.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         public ActionResult<Location> Post([FromBody] Location userInfo)
         {
+            using (context)
+            {
             this.context.Locations.Add(userInfo);
             this.context.SaveChanges();
 
-            return this.CreatedAtAction(nameof(Get), new { id = userInfo.UserId, userInfo });
+            return this.CreatedAtAction(nameof(Get), new { id = userInfo.UserId, userInfo });           
+            }
         }
 
         // PUT api/values/5
