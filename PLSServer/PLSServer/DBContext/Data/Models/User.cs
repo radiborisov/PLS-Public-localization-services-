@@ -11,7 +11,7 @@ namespace PLSServer.DBContext.Data.Models
     {
         public User()
         {
-            Locations = new HashSet<Location>();
+            Locations = new List<Location>();
         }
 
         [Key]
@@ -24,7 +24,6 @@ namespace PLSServer.DBContext.Data.Models
 
         [Column("isonline")]
         public bool IsOnline { get; set; } = false;
-
-        public HashSet<Location> Locations { get; set; }
+        public List<Location> Locations { get; set; }
     }
 }

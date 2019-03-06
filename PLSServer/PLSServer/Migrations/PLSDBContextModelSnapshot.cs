@@ -63,7 +63,7 @@ namespace PLSServer.Migrations
 
             modelBuilder.Entity("PLSServer.DBContext.Data.Models.Location", b =>
                 {
-                    b.HasOne("PLSServer.DBContext.Data.Models.User", "Locat")
+                    b.HasOne("PLSServer.DBContext.Data.Models.User", "User")
                         .WithMany("Locations")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

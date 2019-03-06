@@ -28,8 +28,6 @@ namespace PLSServer.DBContext.Data.Models
         [Required]
         [Column("userid")]
         public int UserId { get; set; }
-
-        [ForeignKey(nameof(UserId))]
-        public User Locat { get; set; }
+        public User User { get; set; }
     }
 }

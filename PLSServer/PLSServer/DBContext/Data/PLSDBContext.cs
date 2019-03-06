@@ -26,6 +26,37 @@ namespace PLSServer.DBContext.Data
             }
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            ConfigureUserEntity(modelBuilder);
+            ConfigureLocationEntity(modelBuilder);
+        }
+
+        private void ConfigureLocationEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<Location>()
+                .HasKey(k => k.Id);
+
+            modelBuilder
+                .Entity<Location>()
+                .HasOne(u => u.User)
+                .WithMany(l => l.Locations)
+                .HasForeignKey(f => f.UserId);
+        }
+
+        private void ConfigureUserEntity(ModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Entity<User>()
+                .HasKey(k => k.Id);
+
+            modelBuilder
+                .Entity<User>()
+                .HasMany(l => l.Locations)
+                .WithOne(u => u.User);
+        }
+
         public DbSet<User> Users { get; set; }
 
         public DbSet<Location> Locations { get; set; }

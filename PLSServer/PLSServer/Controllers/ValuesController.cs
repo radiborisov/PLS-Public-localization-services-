@@ -36,16 +36,27 @@ namespace PLSServer.Controllers
         [ProducesResponseType(200)]
 
 
-        public ActionResult<Location> Get(int id)
+        public ActionResult<int> Get(string id)
         {
             using (context)
             {
-            var location = this.context.Locations.FirstOrDefault(x => x.UserId == id);
-            if (location == null)
-            {
-                return this.NotFound();
-            }
-            return location;
+                var location = this.context.Users.FirstOrDefault(x => x.PhoneNumber == id);
+                if (location == null)
+                {
+                    User user = new User()
+                    {
+                        PhoneNumber = id,
+                        IsOnline = false                      
+                    };
+
+                    this.context.Users.Add(user);
+                    this.context.SaveChanges();
+
+                    location = this.context.Users.FirstOrDefault(x => x.PhoneNumber == id);
+
+                    return location.Id;
+                }
+                return location.Id;
 
             }
         }
@@ -58,10 +69,10 @@ namespace PLSServer.Controllers
         {
             using (context)
             {
-            this.context.Locations.Add(userInfo);
-            this.context.SaveChanges();
+                this.context.Locations.Add(userInfo);
+                this.context.SaveChanges();
 
-            return this.CreatedAtAction(nameof(Get), new { id = userInfo.UserId, userInfo });           
+                return this.CreatedAtAction(nameof(Get), new { id = userInfo.UserId, userInfo });
             }
         }
 
