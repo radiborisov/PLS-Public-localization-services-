@@ -27,21 +27,18 @@ namespace PLSServer.Controllers
             using (context)
             {
                 return this.context.Locations.ToList();
-
             }
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
-
-
         public ActionResult<int> Get(string id)
         {
             using (context)
             {
-                var location = this.context.Users.FirstOrDefault(x => x.PhoneNumber == id);
-                if (location == null)
+                var currentUser = this.context.Users.FirstOrDefault(x => x.PhoneNumber == id);
+                if (currentUser == null)
                 {
                     User user = new User()
                     {
@@ -52,11 +49,11 @@ namespace PLSServer.Controllers
                     this.context.Users.Add(user);
                     this.context.SaveChanges();
 
-                    location = this.context.Users.FirstOrDefault(x => x.PhoneNumber == id);
+                    currentUser = this.context.Users.FirstOrDefault(x => x.PhoneNumber == id);
 
-                    return location.Id;
+                    return currentUser.Id;
                 }
-                return location.Id;
+                return currentUser.Id;
 
             }
         }
