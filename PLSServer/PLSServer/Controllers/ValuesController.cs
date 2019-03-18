@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PLSServer.DBContext.Data;
-using PLSServer.DBContext.Data.Models;
+using PLSDataBase;
+using PLSDataBase.Models;
 
 namespace PLSServer.Controllers
 {
@@ -33,11 +33,12 @@ namespace PLSServer.Controllers
         // GET api/values/5
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
-        public ActionResult<int> Get(string id)
+        public ActionResult<string> Get(string id)
         {
             using (context)
             {
                 var currentUser = this.context.Users.FirstOrDefault(x => x.PhoneNumber == id);
+
                 if (currentUser == null)
                 {
                     User user = new User()
@@ -51,9 +52,9 @@ namespace PLSServer.Controllers
 
                     currentUser = this.context.Users.FirstOrDefault(x => x.PhoneNumber == id);
 
-                    return currentUser.Id;
+                    return currentUser.PhoneNumber;
                 }
-                return currentUser.Id;
+                return currentUser.PhoneNumber;
 
             }
         }
@@ -78,12 +79,6 @@ namespace PLSServer.Controllers
         public void Put(int id, [FromBody] string value)
         {
 
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

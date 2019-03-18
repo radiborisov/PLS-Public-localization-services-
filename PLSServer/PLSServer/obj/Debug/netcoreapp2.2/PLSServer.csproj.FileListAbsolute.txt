@@ -26,3 +26,17 @@ C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-service
 C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.RazorTargetAssemblyInfo.cache
 C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.dll
 C:\Users\iliaf\Desktop\PublicLocalizatonServices\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.pdb
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.deps.json
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.runtimeconfig.json
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.runtimeconfig.dev.json
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.pdb
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.csprojAssemblyReference.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.csproj.CoreCompileInputs.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.RazorAssemblyInfo.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.RazorAssemblyInfo.cs
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.AssemblyInfoInputs.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.AssemblyInfo.cs
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.RazorTargetAssemblyInfo.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.pdb

@@ -1,0 +1,9 @@
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Release\netcoreapp2.2\PLSDataBase.Models.deps.json
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Release\netcoreapp2.2\PLSDataBase.Models.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Release\netcoreapp2.2\PLSDataBase.Models.pdb
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.csprojAssemblyReference.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.csproj.CoreCompileInputs.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.AssemblyInfoInputs.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.AssemblyInfo.cs
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.pdb

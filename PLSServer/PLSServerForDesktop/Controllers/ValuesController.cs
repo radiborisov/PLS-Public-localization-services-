@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PLSServer.DBContext.Data;
-using PLSServer.DBContext.Data.Models;
+using PLSDataBase;
 
 namespace PLSServerForDesktop.Controllers
 {
@@ -18,6 +17,7 @@ namespace PLSServerForDesktop.Controllers
         {
             this.context = context;
         }
+
         // GET api/values
         [HttpGet]
         public ActionResult<Dictionary<string, List<decimal>>> Get()
