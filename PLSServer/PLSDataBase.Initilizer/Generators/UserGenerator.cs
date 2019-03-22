@@ -20,7 +20,13 @@ namespace PLSDataBase.Initilizer.Generators
 
             for (int i = 0; i < users.Length; i++)
             {
-                users[i].PhoneNumber = stringUsers[i];
+                User newUser = new User
+                {
+                    PhoneNumber = stringUsers[i],
+                    IsSavioer = true,
+                    IsOnline = true
+                };
+                users[i] = newUser;
             }
 
             return users;

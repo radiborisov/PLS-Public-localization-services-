@@ -30,3 +30,5 @@ D:\Project\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\n
 D:\Project\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSDataBase.Models.dll
 D:\Project\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSDataBase.pdb
 D:\Project\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSDataBase.Models.pdb
+D:\Project\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSDataBase.Initilizer.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSDataBase.Initilizer.pdb

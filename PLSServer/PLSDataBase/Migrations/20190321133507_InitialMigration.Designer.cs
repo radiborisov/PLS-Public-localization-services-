@@ -9,8 +9,8 @@ using PLSDataBase;
 namespace PLSDataBase.Migrations
 {
     [DbContext(typeof(PLSDBContext))]
-    [Migration("20190318175733_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190321133507_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PLSDataBase.Initilizer\PLSDataBase.Initilizer.csproj" />
     <ProjectReference Include="..\PLSServer\PLSServer.csproj" />
   </ItemGroup>
 

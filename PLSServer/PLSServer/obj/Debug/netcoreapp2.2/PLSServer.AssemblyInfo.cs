@@ -7,6 +7,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("7ed843e6-db0c-41bd-a82c-7fa0576b4f3a")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("PLSServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

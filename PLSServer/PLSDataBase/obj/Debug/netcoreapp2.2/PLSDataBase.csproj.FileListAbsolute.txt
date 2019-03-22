@@ -1,0 +1,12 @@
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.deps.json
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.pdb
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.csprojAssemblyReference.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.csproj.CoreCompileInputs.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.AssemblyInfoInputs.cache
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.AssemblyInfo.cs
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.csproj.CopyComplete
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.pdb

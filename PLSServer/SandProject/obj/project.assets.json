@@ -845,6 +845,19 @@
           "bin/placeholder/PLSDataBase.dll": {}
         }
       },
+      "PLSDataBase.Initilizer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "PLSDataBase": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PLSDataBase.Initilizer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PLSDataBase.Initilizer.dll": {}
+        }
+      },
       "PLSDataBase.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -3252,6 +3265,11 @@
       "path": "../PLSDataBase/PLSDataBase.csproj",
       "msbuildProject": "../PLSDataBase/PLSDataBase.csproj"
     },
+    "PLSDataBase.Initilizer/1.0.0": {
+      "type": "project",
+      "path": "../PLSDataBase.Initilizer/PLSDataBase.Initilizer.csproj",
+      "msbuildProject": "../PLSDataBase.Initilizer/PLSDataBase.Initilizer.csproj"
+    },
     "PLSDataBase.Models/1.0.0": {
       "type": "project",
       "path": "../PLSDataBase.Models/PLSDataBase.Models.csproj",
@@ -3266,6 +3284,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.NETCore.App >= 2.2.0",
+      "PLSDataBase.Initilizer >= 1.0.0",
       "PLSServer >= 1.0.0"
     ]
   },
@@ -3299,6 +3318,9 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
+            "D:\\Project\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Initilizer\\PLSDataBase.Initilizer.csproj": {
+              "projectPath": "D:\\Project\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Initilizer\\PLSDataBase.Initilizer.csproj"
+            },
             "D:\\Project\\PLS-Public-localization-services-\\PLSServer\\PLSServer\\PLSServer.csproj": {
               "projectPath": "D:\\Project\\PLS-Public-localization-services-\\PLSServer\\PLSServer\\PLSServer.csproj"
             }

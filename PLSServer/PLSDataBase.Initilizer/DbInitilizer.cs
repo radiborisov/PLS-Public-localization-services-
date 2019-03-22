@@ -4,16 +4,16 @@ using System;
 
 namespace PLSDataBase.Initilizer
 {
-    public class DbInitilizer
+    public static class DbInitilizer
     {
-        public static void ResetDataBase(PLSDBContext context)
+        public static string ResetDataBase(PLSDBContext context)
         {
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
-            Console.WriteLine("BookShop database created successfully.");
-
             Seed(context);
+
+            return "PLS database was created sucessfuly";
         }
 
         private static void Seed(PLSDBContext context)
@@ -22,9 +22,10 @@ namespace PLSDataBase.Initilizer
             Location[] locations = LocationGenerator.CreateLocations();
 
             context.AddRange(users);
-            context.AddRange(locations);
-
             context.SaveChanges();
+            context.AddRange(locations);
+            context.SaveChanges();
+
         }
     }
 }

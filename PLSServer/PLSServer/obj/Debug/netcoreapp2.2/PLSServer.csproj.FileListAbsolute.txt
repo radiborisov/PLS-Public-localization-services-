@@ -40,3 +40,8 @@ D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netco
 D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.RazorTargetAssemblyInfo.cache
 D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.dll
 D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.pdb
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSDataBase.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSDataBase.pdb
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+D:\Project\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.csproj.CopyComplete

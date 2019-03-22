@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v2.2": {
       "SandProject/1.0.0": {
         "dependencies": {
+          "PLSDataBase.Initilizer": "1.0.0",
           "PLSServer": "1.0.0"
         },
         "runtime": {
@@ -435,6 +436,14 @@
           "PLSDataBase.dll": {}
         }
       },
+      "PLSDataBase.Initilizer/1.0.0": {
+        "dependencies": {
+          "PLSDataBase": "1.0.0"
+        },
+        "runtime": {
+          "PLSDataBase.Initilizer.dll": {}
+        }
+      },
       "PLSDataBase.Models/1.0.0": {
         "runtime": {
           "PLSDataBase.Models.dll": {}
@@ -802,6 +811,11 @@
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
     "PLSDataBase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PLSDataBase.Initilizer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
