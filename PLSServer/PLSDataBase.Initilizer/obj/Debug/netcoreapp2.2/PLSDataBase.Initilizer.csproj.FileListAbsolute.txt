@@ -1,0 +1,14 @@
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Initilizer.deps.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Initilizer.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Initilizer.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.csprojAssemblyReference.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.csproj.CoreCompileInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.AssemblyInfoInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.AssemblyInfo.cs
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.csproj.CopyComplete
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.pdb

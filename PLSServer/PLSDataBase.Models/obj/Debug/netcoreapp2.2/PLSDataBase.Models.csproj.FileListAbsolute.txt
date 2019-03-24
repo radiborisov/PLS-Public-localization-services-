@@ -7,3 +7,12 @@ D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\De
 D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.AssemblyInfo.cs
 D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.dll
 D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Debug\netcoreapp2.2\PLSDataBase.Models.deps.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.csprojAssemblyReference.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.csproj.CoreCompileInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.AssemblyInfoInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.AssemblyInfo.cs
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.pdb

@@ -14,12 +14,13 @@ using System.Windows.Forms;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using PLSDesktopApi.Models;
+using Newtonsoft.Json;
 
 namespace PLSDesktopApi
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, List<Location>> usersLocations = new Dictionary<string, List<Location>>();
+        List<CreateInputUser> users = new List<CreateInputUser>();
         List<GMapMarker> gmapMarkers = new List<GMapMarker>();
         public Form1()
         {
@@ -45,12 +46,12 @@ namespace PLSDesktopApi
 
             GMapOverlay markers = new GMapOverlay("markers");
 
-            foreach (var userKey in usersLocations)
+            foreach (var user in users)
             {
-                for (int i = 0; i < userKey.Value.Count(); i += 3)
+                for (int i = 0; i < user.Locations.Count(); i += 3)
                 {
                     GMapMarker marker = new GMarkerGoogle(
-                                    new PointLatLng(userKey.Value[i].Longitude, userKey.Value[i].Latitude),
+                                    new PointLatLng(user.Locations[i].Longitude, user.Locations[i].Latitude),
                                     GMarkerGoogleType.blue_pushpin);
                     gmapMarkers.Add(marker);
                 }
@@ -71,7 +72,7 @@ namespace PLSDesktopApi
 
 
             string result = string.Empty;
-            string url = @"https://localhost:44301/api/values";
+            string url = @"https://localhost:44301/return/user";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.AutomaticDecompression = DecompressionMethods.GZip;
@@ -83,45 +84,9 @@ namespace PLSDesktopApi
                 result = reader.ReadToEnd();
             }
 
-            var list = result.Split(new char[] { ' ', '"', '{', '}' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            var user = JsonConvert.DeserializeObject<CreateInputUser>(result);
 
-            Console.WriteLine(result);
-
-
-            for (int i = 0; i < list.Count; i += 2)
-            {
-                var list2 = list[i + 1].Split(new char[] { ',', '[', ']', ':' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                if (!usersLocations.ContainsKey(list[i]))
-                {
-                    usersLocations.Add(list[i], new List<Location>());
-                }
-                else
-                {
-
-                    for (int j = 0; j < list2.Count; j += 3)
-                    {
-                        Location location = new Location();
-
-                        location.Longitude = double.Parse(list2[j]);
-                        location.Latitude = double.Parse(list2[j + 1]);
-                        location.Altitude = double.Parse(list2[j + 2]);
-
-                        usersLocations[list[i]].Add(location);
-                    }
-                    return;
-                }
-
-                for (int j = 0; j < list2.Count; j += 3)
-                {
-                    Location location = new Location();
-
-                    location.Longitude = double.Parse(list2[j]);
-                    location.Latitude = double.Parse(list2[j + 1]);
-                    location.Altitude = double.Parse(list2[j + 2]);
-
-                    usersLocations[list[i]].Add(location);
-                }
-            }
+            users.Add(user);
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)

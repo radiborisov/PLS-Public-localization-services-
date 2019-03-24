@@ -12,15 +12,15 @@ namespace PLSDataBase.Models
 
         [Required]
         [Column("latitude")]
-        public decimal Latitude { get; set; }
+        public double Latitude { get; set; }
 
         [Required]
         [Column("longitude")]
-        public decimal Longitude { get; set; }
+        public double Longitude { get; set; }
 
         [Required]
         [Column("altitude")]
-        public decimal Altitude { get; set; }
+        public double Altitude { get; set; }
 
         [Required]
         [Column("userid")]
