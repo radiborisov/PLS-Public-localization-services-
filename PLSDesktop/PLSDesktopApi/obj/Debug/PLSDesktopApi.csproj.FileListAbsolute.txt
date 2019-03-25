@@ -100,3 +100,5 @@ D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.CopyComplete
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\Newtonsoft.Json.pdb
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe.config
+D:\Project\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\Newtonsoft.Json.pdb
+D:\Project\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe.config

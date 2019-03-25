@@ -82,8 +82,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\CreateInputUser.cs" />
-    <Compile Include="Models\CreateLocation.cs" />
+    <Compile Include="Models\User\CreateInputUser.cs" />
+    <Compile Include="Models\Location\LocationDto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

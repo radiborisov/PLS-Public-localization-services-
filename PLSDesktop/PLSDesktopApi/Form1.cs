@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GMap.NET;
+﻿using GMap.NET;
 using GMap.NET.MapProviders;
-using System.Net;
-using System.IO;
-using System.Windows.Forms;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
-using PLSDesktopApi.Models;
 using Newtonsoft.Json;
+using PLSDesktopApi.Models.Location;
+using PLSDesktopApi.Models.User;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Windows.Forms;
 
 namespace PLSDesktopApi
 {
@@ -22,6 +19,7 @@ namespace PLSDesktopApi
     {
         List<CreateInputUser> users = new List<CreateInputUser>();
         List<GMapMarker> gmapMarkers = new List<GMapMarker>();
+
         public Form1()
         {
             InitializeComponent();
@@ -48,10 +46,10 @@ namespace PLSDesktopApi
 
             foreach (var user in users)
             {
-                for (int i = 0; i < user.Locations.Count(); i += 3)
+                foreach (var location in user.Locations)
                 {
                     GMapMarker marker = new GMarkerGoogle(
-                                    new PointLatLng(user.Locations[i].Longitude, user.Locations[i].Latitude),
+                                    new PointLatLng(location.Longitude, location.Latitude),
                                     GMarkerGoogleType.blue_pushpin);
                     gmapMarkers.Add(marker);
                 }
@@ -84,9 +82,12 @@ namespace PLSDesktopApi
                 result = reader.ReadToEnd();
             }
 
-            var user = JsonConvert.DeserializeObject<CreateInputUser>(result);
+            var userInput = JsonConvert.DeserializeObject<List<CreateInputUser>>(result);
 
-            users.Add(user);
+            foreach (var user in userInput)
+            {
+                users.Add(user);
+            }
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)

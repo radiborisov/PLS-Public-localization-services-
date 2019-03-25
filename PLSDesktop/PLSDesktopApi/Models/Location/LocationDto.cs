@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PLSDesktopApi.Models
+namespace PLSDesktopApi.Models.Location
 {
-    public class CreateLocation
+    public class LocationDto
     {
         public double Latitude { get; set; }
 

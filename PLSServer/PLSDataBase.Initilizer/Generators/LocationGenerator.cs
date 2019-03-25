@@ -23,9 +23,9 @@ namespace PLSDataBase.Initilizer.Generators
             {
                 string[] splitedInput = inputLocations[i].Split().ToArray();
 
-                decimal longitude = decimal.Parse(splitedInput[0]);
-                decimal latitude = decimal.Parse(splitedInput[1]);
-                decimal altitude = decimal.Parse(splitedInput[2]);
+                double longitude = double.Parse(splitedInput[0]);
+                double latitude = double.Parse(splitedInput[1]);
+                double altitude = double.Parse(splitedInput[2]);
                 int userId = int.Parse(splitedInput[3]);
 
                 Location newLocation = new Location()

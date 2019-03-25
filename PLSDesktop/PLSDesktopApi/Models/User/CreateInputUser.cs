@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json.Linq;
+using PLSDesktopApi.Models.Location;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PLSDesktopApi.Models
+namespace PLSDesktopApi.Models.User
 {
     public class CreateInputUser
     {
@@ -15,6 +16,6 @@ namespace PLSDesktopApi.Models
 
         public bool IsOnline { get; set; }
 
-        public List<CreateLocation> Locations { get; set; }
+        public List<LocationDto> Locations { get; set; }
     }
 }

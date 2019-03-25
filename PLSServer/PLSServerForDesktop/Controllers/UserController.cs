@@ -26,7 +26,7 @@ namespace PLSServerForDesktop.Controllers
         public ActionResult<List<CreateUserAllView>> Get()
         {
             var userLocations = this.context.Users
-                .ProjectTo<CreateUserAllView>()
+                .ProjectTo<CreateUserAllView>(this.mapper.ConfigurationProvider)
                 .ToList();
 
             return userLocations;
