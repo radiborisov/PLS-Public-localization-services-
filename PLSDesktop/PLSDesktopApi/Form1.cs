@@ -28,24 +28,12 @@ namespace PLSDesktopApi
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
 
             GetInformation();
 
-            gMapControl1.DragButton = MouseButtons.Left;
-            gMapControl1.MapProvider = GMapProviders.BingHybridMap;
-            gMapControl1.Position = new PointLatLng(12, 16);
-            gMapControl1.MinZoom = 5;
-            gMapControl1.MaxZoom = 100;
-            gMapControl1.Zoom = 10;
-
-            GMapOverlay markers = new GMapOverlay("markers");
-
             foreach (var user in users)
             {
+                listBox1.Items.Add(user.PhoneNumber);
                 foreach (var location in user.Locations)
                 {
                     GMapMarker marker = new GMarkerGoogle(
@@ -54,6 +42,15 @@ namespace PLSDesktopApi
                     gmapMarkers.Add(marker);
                 }
             }
+
+            gMapControl1.DragButton = MouseButtons.Left;
+            gMapControl1.MapProvider = GMapProviders.BingHybridMap;
+            gMapControl1.Position = new PointLatLng(42.666551, 23.350466);
+            gMapControl1.MinZoom = 5;
+            gMapControl1.MaxZoom = 100;
+            gMapControl1.Zoom = 10;
+
+            GMapOverlay markers = new GMapOverlay("markers");
 
             foreach (var item in gmapMarkers)
             {
@@ -93,6 +90,35 @@ namespace PLSDesktopApi
         private void gMapControl1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            gMapControl1.Overlays.Clear();
+            var currentPhoneNumber = listBox1.GetItemText(listBox1.SelectedItem);
+
+            gmapMarkers.Clear();
+
+            var user = users.FirstOrDefault(p => p.PhoneNumber == currentPhoneNumber);
+
+            foreach (var location in user.Locations) 
+            {
+                GMapMarker marker = new GMarkerGoogle(
+                                new PointLatLng(location.Longitude, location.Latitude),
+                                GMarkerGoogleType.blue_pushpin);
+                gmapMarkers.Add(marker);
+            }
+
+
+
+            GMapOverlay markers = new GMapOverlay("markers");
+
+            foreach (var item in gmapMarkers)
+            {
+                markers.Markers.Add(item);
+                gMapControl1.Overlays.Add(markers);
+                gMapControl1.ShowCenter = false;
+            }
         }
     }
 }

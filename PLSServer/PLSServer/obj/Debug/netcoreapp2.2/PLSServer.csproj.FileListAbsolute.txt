@@ -64,3 +64,22 @@ D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netc
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.csproj.CopyComplete
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.dll
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.deps.json
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.runtimeconfig.json
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.runtimeconfig.dev.json
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSServer.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSDataBase.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSDataBase.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.csprojAssemblyReference.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.csproj.CoreCompileInputs.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.RazorAssemblyInfo.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.RazorAssemblyInfo.cs
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.AssemblyInfoInputs.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.AssemblyInfo.cs
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.RazorTargetAssemblyInfo.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.csproj.CopyComplete
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSServer\obj\Debug\netcoreapp2.2\PLSServer.pdb

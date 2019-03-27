@@ -26,3 +26,17 @@ D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bi
 D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.pdb
 D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
 D:\Project\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.csproj.CopyComplete
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Initilizer.deps.json
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Initilizer.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Initilizer.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.csprojAssemblyReference.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.csproj.CoreCompileInputs.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.AssemblyInfoInputs.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.AssemblyInfo.cs
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.csproj.CopyComplete
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Initilizer\obj\Debug\netcoreapp2.2\PLSDataBase.Initilizer.pdb

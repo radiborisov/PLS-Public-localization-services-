@@ -22,3 +22,15 @@ D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\ne
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.csproj.CopyComplete
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.dll
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.deps.json
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.csprojAssemblyReference.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.csproj.CoreCompileInputs.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.AssemblyInfoInputs.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.AssemblyInfo.cs
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.csproj.CopyComplete
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Debug\netcoreapp2.2\PLSDataBase.pdb

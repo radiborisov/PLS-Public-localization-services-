@@ -102,3 +102,30 @@ D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe.config
 D:\Project\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\Newtonsoft.Json.pdb
 D:\Project\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe.config
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\PLSDesktopApi.exe.config
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\PLSDesktopApi.exe
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\PLSDesktopApi.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\EntityFramework.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\GMap.NET.Core.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\GMap.NET.WindowsPresentation.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\EntityFramework.xml
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.xml
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csprojAssemblyReference.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe.config
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.Form1.resources
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.Properties.Resources.resources
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.GenerateResource.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.CoreCompileInputs.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.CopyComplete
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.pdb

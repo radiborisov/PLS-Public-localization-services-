@@ -16,3 +16,12 @@ D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\D
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.AssemblyInfo.cs
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.dll
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Debug\netcoreapp2.2\PLSDataBase.Models.deps.json
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.csprojAssemblyReference.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.csproj.CoreCompileInputs.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.AssemblyInfoInputs.cache
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.AssemblyInfo.cs
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
