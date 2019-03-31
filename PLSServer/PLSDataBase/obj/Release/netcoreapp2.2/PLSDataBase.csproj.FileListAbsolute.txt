@@ -34,3 +34,5 @@ C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase
 C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.csproj.CopyComplete
 C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.dll
 C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Release\netcoreapp2.2\PLSDataBase.runtimeconfig.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Release\netcoreapp2.2\PLSDataBase.runtimeconfig.dev.json

@@ -24,7 +24,7 @@ namespace PLSServerForDesktop
         {
             services.AddDbContext<PLSDBContext>
                 (options => options.
-                UseNpgsql(this.
+                UseSqlServer(this.
                 Configuration.
                 GetConnectionString("DefaultConnection")));
 

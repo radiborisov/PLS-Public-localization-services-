@@ -22,7 +22,7 @@ namespace PLSDataBase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Server=pls-db.postgres.database.azure.com;Database=PLSDBServer;Port=5432;User Id=plsadmin@pls-db;Password=Pls@dmin32;Ssl Mode=Require;");
+            optionsBuilder.UseSqlServer("Server=tcp:pls-databaseserver.database.windows.net,1433;Initial Catalog=PLSDatabase;Persist Security Info=False;User ID=sqladmin;Password=Pls@dmin32;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
