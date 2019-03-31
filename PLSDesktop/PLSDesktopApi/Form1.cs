@@ -67,7 +67,7 @@ namespace PLSDesktopApi
 
 
             string result = string.Empty;
-            string url = @"https://localhost:44301/return/user";
+            string url = @"http://public-localization-services-desktop-server.azurewebsites.net/return/user";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.AutomaticDecompression = DecompressionMethods.GZip;
