@@ -69,11 +69,11 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
             this.listBox1.Items.AddRange(new object[] {
-            "0000000000"});
+            "All users"});
             this.listBox1.Location = new System.Drawing.Point(3, 5);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBox1.Size = new System.Drawing.Size(118, 444);
+            this.listBox1.Size = new System.Drawing.Size(118, 404);
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 

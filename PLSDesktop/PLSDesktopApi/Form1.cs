@@ -36,9 +36,13 @@ namespace PLSDesktopApi
                 listBox1.Items.Add(user.PhoneNumber);
                 foreach (var location in user.Locations)
                 {
+                    StringBuilder sb = new StringBuilder();
                     GMapMarker marker = new GMarkerGoogle(
                                     new PointLatLng(location.Longitude, location.Latitude),
                                     GMarkerGoogleType.blue_pushpin);
+                    sb.AppendLine(user.PhoneNumber);
+                    sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
+                    marker.ToolTipText = sb.ToString().TrimEnd();
                     gmapMarkers.Add(marker);
                 }
             }
@@ -94,31 +98,83 @@ namespace PLSDesktopApi
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
             gMapControl1.Overlays.Clear();
             var currentPhoneNumber = listBox1.GetItemText(listBox1.SelectedItem);
-
             gmapMarkers.Clear();
 
-            var user = users.FirstOrDefault(p => p.PhoneNumber == currentPhoneNumber);
+            //foreach (var location in user.Locations)
+            //{
+            //    StringBuilder sb = new StringBuilder();
 
-            foreach (var location in user.Locations) 
+            //    GMapMarker marker = new GMarkerGoogle(
+            //                    new PointLatLng(location.Longitude, location.Latitude),
+            //                    GMarkerGoogleType.blue_pushpin);
+
+            //    sb.AppendLine(user.PhoneNumber);
+            //    sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
+
+            //    marker.ToolTipText = sb.ToString().TrimEnd();
+            //    gmapMarkers.Add(marker);
+
+            //}
+            if (currentPhoneNumber.ToLower() == "All users".ToLower())
             {
-                GMapMarker marker = new GMarkerGoogle(
-                                new PointLatLng(location.Longitude, location.Latitude),
-                                GMarkerGoogleType.blue_pushpin);
-                gmapMarkers.Add(marker);
+                foreach (var currentUser in users)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    var location = currentUser.Locations[currentUser.Locations.Count - 1];
+                    GMapMarker marker = new GMarkerGoogle(
+                                    new PointLatLng(location.Longitude, location.Latitude),
+                                    GMarkerGoogleType.blue_pushpin);
+                    sb.AppendLine(currentUser.PhoneNumber);
+                    sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
+                    marker.ToolTipText = sb.ToString().TrimEnd();
+                    gmapMarkers.Add(marker);
+                   
+                }
+
+                GMapOverlay markers = new GMapOverlay("markers");
+
+                foreach (var item in gmapMarkers)
+                {
+                    markers.Markers.Add(item);
+                    gMapControl1.Overlays.Add(markers);
+                    gMapControl1.ShowCenter = false;
+                }
+
+
+            }
+            else
+            {
+                var user = users.FirstOrDefault(p => p.PhoneNumber == currentPhoneNumber);
+
+                foreach (var location in user.Locations)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    GMapMarker marker = new GMarkerGoogle(
+                                    new PointLatLng(location.Longitude, location.Latitude),
+                                    GMarkerGoogleType.blue_pushpin);
+                    sb.AppendLine(user.PhoneNumber);
+                    sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
+                    marker.ToolTipText = sb.ToString().TrimEnd();
+                    gmapMarkers.Add(marker);
+                }
+
+
+
+                GMapOverlay markers = new GMapOverlay("markers");
+
+                foreach (var item in gmapMarkers)
+                {
+                    markers.Markers.Add(item);
+                    gMapControl1.Overlays.Add(markers);
+                    gMapControl1.ShowCenter = false;
+                }
             }
 
 
 
-            GMapOverlay markers = new GMapOverlay("markers");
-
-            foreach (var item in gmapMarkers)
-            {
-                markers.Markers.Add(item);
-                gMapControl1.Overlays.Add(markers);
-                gMapControl1.ShowCenter = false;
-            }
         }
     }
 }
