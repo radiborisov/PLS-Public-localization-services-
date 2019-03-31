@@ -16,3 +16,12 @@ D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\R
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.AssemblyInfo.cs
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.dll
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Release\netcoreapp2.2\PLSDataBase.Models.deps.json
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Release\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Release\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.csprojAssemblyReference.cache
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.csproj.CoreCompileInputs.cache
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.AssemblyInfoInputs.cache
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.AssemblyInfo.cs
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Release\netcoreapp2.2\PLSDataBase.Models.pdb

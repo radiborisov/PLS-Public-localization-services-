@@ -5495,7 +5495,7 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Design/2.2.0": {
-      "sha512": "VLWK+ZtMMNukY6XjxYHc7mz33vkquoEzQJHm/LCF5REVxIaexLr+UTImljRRJBdUDJluDAQwU+59IX0rFDfURA==",
+      "sha512": "ex8MZwgoyqHim1L6/65FnfjdSMtSKSuSU3DVoiCADZACc05T7f8uRB7SnDIP5LPQKLUBLilfNkd1p14RLyfdQA==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.design/2.2.0",
       "hasTools": true,
@@ -7488,7 +7488,7 @@
       ]
     },
     "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "sha512": "znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
       "type": "package",
       "path": "newtonsoft.json/11.0.2",
       "files": [
@@ -11831,6 +11831,7 @@
       "path": "system.threading.tasks.parallel/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12310,23 +12311,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Radko Piradko\\.nuget\\packages\\": {},
+    "C:\\Users\\Ilia\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSServerForDesktop\\PLSServerForDesktop.csproj",
+      "projectUniqueName": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSServerForDesktop\\PLSServerForDesktop.csproj",
       "projectName": "PLSServerForDesktop",
-      "projectPath": "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSServerForDesktop\\PLSServerForDesktop.csproj",
-      "packagesPath": "C:\\Users\\Radko Piradko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSServerForDesktop\\obj\\",
+      "projectPath": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSServerForDesktop\\PLSServerForDesktop.csproj",
+      "packagesPath": "C:\\Users\\Ilia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSServerForDesktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Radko Piradko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ilia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12339,8 +12340,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\PLSDataBase.csproj": {
-              "projectPath": "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\PLSDataBase.csproj"
+            "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\PLSDataBase.csproj": {
+              "projectPath": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\PLSDataBase.csproj"
             }
           }
         }

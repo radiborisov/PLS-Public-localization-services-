@@ -22,3 +22,15 @@ D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.csproj.CopyComplete
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.dll
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.pdb
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Release\netcoreapp2.2\PLSDataBase.deps.json
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Release\netcoreapp2.2\PLSDataBase.dll
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Release\netcoreapp2.2\PLSDataBase.pdb
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Release\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\bin\Release\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.csprojAssemblyReference.cache
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.csproj.CoreCompileInputs.cache
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.AssemblyInfoInputs.cache
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.AssemblyInfo.cs
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.csproj.CopyComplete
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.dll
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase\obj\Release\netcoreapp2.2\PLSDataBase.pdb

@@ -25,3 +25,12 @@ C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\
 C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.AssemblyInfo.cs
 C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.dll
 C:\Users\Radko Piradko\Desktop\New folder (2)\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Debug\netcoreapp2.2\PLSDataBase.Models.deps.json
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\bin\Debug\netcoreapp2.2\PLSDataBase.Models.pdb
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.csprojAssemblyReference.cache
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.csproj.CoreCompileInputs.cache
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.AssemblyInfoInputs.cache
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.AssemblyInfo.cs
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.dll
+C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSServer\PLSDataBase.Models\obj\Debug\netcoreapp2.2\PLSDataBase.Models.pdb

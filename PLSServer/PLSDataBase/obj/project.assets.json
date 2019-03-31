@@ -3231,23 +3231,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Radko Piradko\\.nuget\\packages\\": {},
+    "C:\\Users\\Ilia\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\PLSDataBase.csproj",
+      "projectUniqueName": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\PLSDataBase.csproj",
       "projectName": "PLSDataBase",
-      "projectPath": "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\PLSDataBase.csproj",
-      "packagesPath": "C:\\Users\\Radko Piradko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\obj\\",
+      "projectPath": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\PLSDataBase.csproj",
+      "packagesPath": "C:\\Users\\Ilia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Radko Piradko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ilia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3260,8 +3260,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\PLSDataBase.Models.csproj": {
-              "projectPath": "C:\\Users\\Radko Piradko\\Desktop\\New folder (2)\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\PLSDataBase.Models.csproj"
+            "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\PLSDataBase.Models.csproj": {
+              "projectPath": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\PLSDataBase.Models.csproj"
             }
           }
         }
