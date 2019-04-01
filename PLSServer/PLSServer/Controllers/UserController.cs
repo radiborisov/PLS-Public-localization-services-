@@ -47,7 +47,7 @@ namespace PLSServer.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public ActionResult<User> Post(CreateInputUser userInfo)
+        public ActionResult<int> Post(CreateInputUser userInfo)
         {
             if (!ModelState.IsValid)
             {
@@ -55,7 +55,7 @@ namespace PLSServer.Controllers
             }
             else if (this.context.Users.Any(p => p.PhoneNumber == userInfo.PhoneNumber))
             {
-                return this.CreatedAtAction(nameof(Get), new { id = "Current phone number already exist" });
+                return this.context.Users.FirstOrDefault(p => p.PhoneNumber == userInfo.PhoneNumber).Id;
             }
 
             var user = this.mapper.Map<User>(userInfo);
@@ -64,7 +64,7 @@ namespace PLSServer.Controllers
 
             this.context.SaveChanges();
 
-            return this.CreatedAtAction(nameof(Get), new { id = userInfo.PhoneNumber });
+            return this.context.Users.FirstOrDefault(p => p.PhoneNumber == userInfo.PhoneNumber).Id;
         }
 
         [HttpPut("{id}")]
