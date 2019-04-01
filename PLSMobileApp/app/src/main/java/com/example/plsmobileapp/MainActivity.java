@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
     TextView latitude;
     TextView altitude;
 
-    String phoneNumber;
+    static String userId;
+
+    String PhoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                phoneNumber = inputPhoneNumber.getText().toString();
+                PhoneNumber = inputPhoneNumber.getText().toString();
+
+                new SendRegister().execute(PhoneNumber);
 
                 setContentView(R.layout.activity_main);
 
@@ -145,26 +149,47 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private static String sendRegistration(String phoneNumber) throws  IOException,JSONException{
-        URL url = new URL("https://192.168.0.102/api/values/" + phoneNumber);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");
-        connection.setDoOutput(true);
-        connection.setConnectTimeout(5000);
-        connection.setReadTimeout(5000);
-        connection.connect();
-        BufferedReader rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        JSONObject jsonObject = new JSONObject();
-        String content = "", line;
-        while ((line = rd.readLine()) != null) {
-            content += line + "\n";
+        InputStream is = null;
+
+
+        try {
+            URL url = new URL("https://public-localization-services.azurewebsites.net/add/user");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+
+            JSONObject jsonParam = new JSONObject();
+            jsonParam.put("PhoneNumber", phoneNumber);
+            jsonParam.put("IsSavior", true);
+
+            Log.i("JSON", jsonParam.toString());
+            DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+            //os.writeBytes(URLEncoder.encode(jsonParam.toString(), "UTF-8"));
+            os.writeBytes(jsonParam.toString());
+
+            os.flush();
+            os.close();
+
+            Log.i("STATUS", String.valueOf(conn.getResponseCode()));
+            Log.i("MSG", conn.getResponseMessage());
+
+            is = conn.getInputStream();
+
+            userId = (char)is.read() + "";
+
+
+            conn.disconnect();
+
+            return "successful";
+
         }
-
-        JSONObject jsonObject1 = new JSONObject();
-
-        jsonObject.getJSONObject(content);
-
-        int result = jsonObject.getInt("Id");
-        return "successful";
+        finally {
+            if (is != null){
+                is.close();
+            }
+        }
     }
 
 
@@ -174,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             try{
-                return sendLocation(strings[0],strings[1],strings[2],strings[3]);
+                return sendLocation(strings[0],strings[1],strings[2]);
             }catch (IOException e ){
                 return e.getMessage();
             }
@@ -184,13 +209,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private static String sendLocation(String lon, String lat, String alt, String Id) throws IOException, JSONException {
+    private static String sendLocation(String lon, String lat, String alt) throws IOException, JSONException {
         InputStream is = null;
         double longitude = Double.parseDouble(lon);
         double latitude = Double.parseDouble(lat);
         double altitude = Double.parseDouble(alt);
-        Id = 1 + "";
-        Integer id = Integer.parseInt(Id);
+        Integer id = Integer.parseInt(userId);
 
         try {
             URL url = new URL("https://public-localization-services.azurewebsites.net/add/location");
