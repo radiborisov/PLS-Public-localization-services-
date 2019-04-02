@@ -137,7 +137,7 @@ namespace PLSDesktopApi
             StringBuilder sb = new StringBuilder();
             GMapMarker marker = new GMarkerGoogle(
                             new PointLatLng(location.Longitude, location.Latitude),
-                            GMarkerGoogleType.blue_pushpin);
+                            currentUser.Marker);
             sb.AppendLine(currentUser.PhoneNumber);
             sb.AppendLine($"Longitude: {location.Longitude} , Latitude: {location.Latitude} , Altitude: {location.Altitude} | Date {location.Date.ToString("dd-MM-yyyy HH:mm:ss")}");
             marker.ToolTipText = sb.ToString().TrimEnd();

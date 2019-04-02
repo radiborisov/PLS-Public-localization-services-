@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using GMap.NET.WindowsForms.Markers;
+using Newtonsoft.Json.Linq;
 using PLSDesktopApi.Models.Location;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,20 @@ namespace PLSDesktopApi.Models.User
 
         public bool IsOnline { get; set; }
 
+        public GMarkerGoogleType Marker { get => SetMarker();}
+
         public List<LocationDto> Locations { get; set; }
+
+        private GMarkerGoogleType SetMarker()
+        {
+            if (IsSavioer)
+            {
+                return GMarkerGoogleType.red_small;
+            }
+            else
+            {
+                return GMarkerGoogleType.blue_small;
+            }
+        }
     }
 }
