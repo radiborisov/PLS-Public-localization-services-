@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60*1000,
+                mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10*1000,
                         0, mLocationListener);
             }
         });
