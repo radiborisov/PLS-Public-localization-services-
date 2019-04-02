@@ -49,7 +49,7 @@ namespace PLSServer.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         public ActionResult<int> Post(CreateInputUser userInfo)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || userInfo.PhoneNumber == null)
             {
                 return this.CreatedAtAction(nameof(Get), new { id = "Invalid Input" });
             }
