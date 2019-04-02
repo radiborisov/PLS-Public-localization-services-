@@ -14,6 +14,8 @@ namespace PLSDesktopApi.Models.Location
 
         public double Altitude { get; set; }
 
+        public DateTime Date { get; set; }
+
         public int UserId { get; set; }
     }
 }

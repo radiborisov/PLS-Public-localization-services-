@@ -36,14 +36,7 @@ namespace PLSDesktopApi
                 listBox1.Items.Add(user.PhoneNumber);
                 foreach (var location in user.Locations)
                 {
-                    StringBuilder sb = new StringBuilder();
-                    GMapMarker marker = new GMarkerGoogle(
-                                    new PointLatLng(location.Longitude, location.Latitude),
-                                    GMarkerGoogleType.blue_pushpin);
-                    sb.AppendLine(user.PhoneNumber);
-                    sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
-                    marker.ToolTipText = sb.ToString().TrimEnd();
-                    gmapMarkers.Add(marker);
+                    AddMarkers(user, location);
                 }
             }
 
@@ -56,12 +49,7 @@ namespace PLSDesktopApi
 
             GMapOverlay markers = new GMapOverlay("markers");
 
-            foreach (var item in gmapMarkers)
-            {
-                markers.Markers.Add(item);
-                gMapControl1.Overlays.Add(markers);
-                gMapControl1.ShowCenter = false;
-            }
+            VisualiseMarkers(markers);
         }
 
         private void GetInformation()
@@ -98,54 +86,24 @@ namespace PLSDesktopApi
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
             gMapControl1.Overlays.Clear();
             var currentPhoneNumber = listBox1.GetItemText(listBox1.SelectedItem);
             gmapMarkers.Clear();
 
-            //foreach (var location in user.Locations)
-            //{
-            //    StringBuilder sb = new StringBuilder();
-
-            //    GMapMarker marker = new GMarkerGoogle(
-            //                    new PointLatLng(location.Longitude, location.Latitude),
-            //                    GMarkerGoogleType.blue_pushpin);
-
-            //    sb.AppendLine(user.PhoneNumber);
-            //    sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
-
-            //    marker.ToolTipText = sb.ToString().TrimEnd();
-            //    gmapMarkers.Add(marker);
-
-            //}
             if (currentPhoneNumber.ToLower() == "All users".ToLower())
             {
                 foreach (var currentUser in users)
                 {
-                    StringBuilder sb = new StringBuilder();
                     if (currentUser.Locations.Count - 1 >= 0)
                     {
                         var location = currentUser.Locations[currentUser.Locations.Count - 1];
-                        GMapMarker marker = new GMarkerGoogle(
-                                        new PointLatLng(location.Longitude, location.Latitude),
-                                        GMarkerGoogleType.blue_pushpin);
-                        sb.AppendLine(currentUser.PhoneNumber);
-                        sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
-                        marker.ToolTipText = sb.ToString().TrimEnd();
-                        gmapMarkers.Add(marker);
+                        AddMarkers(currentUser, location);
                     }
                 }
 
                 GMapOverlay markers = new GMapOverlay("markers");
 
-                foreach (var item in gmapMarkers)
-                {
-                    markers.Markers.Add(item);
-                    gMapControl1.Overlays.Add(markers);
-                    gMapControl1.ShowCenter = false;
-                }
-
-
+                VisualiseMarkers(markers);
             }
             else
             {
@@ -153,30 +111,37 @@ namespace PLSDesktopApi
 
                 foreach (var location in user.Locations)
                 {
-                    StringBuilder sb = new StringBuilder();
-                    GMapMarker marker = new GMarkerGoogle(
-                                    new PointLatLng(location.Longitude, location.Latitude),
-                                    GMarkerGoogleType.blue_pushpin);
-                    sb.AppendLine(user.PhoneNumber);
-                    sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
-                    marker.ToolTipText = sb.ToString().TrimEnd();
-                    gmapMarkers.Add(marker);
+                    AddMarkers(user, location);
                 }
-
-
 
                 GMapOverlay markers = new GMapOverlay("markers");
 
-                foreach (var item in gmapMarkers)
-                {
-                    markers.Markers.Add(item);
-                    gMapControl1.Overlays.Add(markers);
-                    gMapControl1.ShowCenter = false;
-                }
+                VisualiseMarkers(markers);
             }
+        }
 
+        private void VisualiseMarkers(GMapOverlay markers)
+        {
+            foreach (var item in gmapMarkers)
+            {
+                markers.Markers.Add(item);
+                gMapControl1.Overlays.Add(markers);
+                gMapControl1.ShowCenter = true;
+                gMapControl1.Zoom = 6;
+                gMapControl1.Zoom = 7;
+            }
+        }
 
-
+        private void AddMarkers(CreateInputUser currentUser, LocationDto location)
+        {
+            StringBuilder sb = new StringBuilder();
+            GMapMarker marker = new GMarkerGoogle(
+                            new PointLatLng(location.Longitude, location.Latitude),
+                            GMarkerGoogleType.blue_pushpin);
+            sb.AppendLine(currentUser.PhoneNumber);
+            sb.AppendLine($"Longitude: {location.Longitude} , Latitude: {location.Latitude} , Altitude: {location.Altitude} | Date {location.Date.ToString("dd-MM-yyyy HH:mm:ss")}");
+            marker.ToolTipText = sb.ToString().TrimEnd();
+            gmapMarkers.Add(marker);
         }
     }
 }
