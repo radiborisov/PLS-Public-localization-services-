@@ -1,4 +1,6 @@
-﻿namespace PLSServerForDesktop.ViewModels.Locations
+﻿using System;
+
+namespace PLSServerForDesktop.ViewModels.Locations
 {
     public class CreateLocationAllView
     {
@@ -7,5 +9,7 @@
         public double Longitude { get; set; }
 
         public double Altitude { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }

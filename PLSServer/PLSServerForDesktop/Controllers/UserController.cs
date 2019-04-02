@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using PLSDataBase;
 using PLSServerForDesktop.ViewModels.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,6 +27,13 @@ namespace PLSServerForDesktop.Controllers
         public ActionResult<List<CreateUserAllView>> Get()
         {
             var userLocations = this.context.Users
+                .Select(x => new
+                {
+                    x.PhoneNumber,
+                    x.IsSavioer,
+                    x.IsOnline,
+                    Locations = x.Locations.Where(l => l.Date.Day == DateTime.Now.Day)
+                })
                 .ProjectTo<CreateUserAllView>(this.mapper.ConfigurationProvider)
                 .ToList();
 

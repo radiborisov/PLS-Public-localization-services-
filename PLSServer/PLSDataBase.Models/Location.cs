@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace PLSDataBase.Models
 {
@@ -21,6 +22,10 @@ namespace PLSDataBase.Models
         [Required]
         [Column("altitude")]
         public double Altitude { get; set; }
+
+        [Required]
+        [Column("date")]
+        public DateTime Date { get; set; } = DateTime.Now;
 
         [Required]
         [Column("userid")]
