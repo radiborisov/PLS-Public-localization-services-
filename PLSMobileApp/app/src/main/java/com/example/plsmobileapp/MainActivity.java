@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60 * 1000,
+                mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60*1000,
                         0, mLocationListener);
             }
         });
@@ -108,22 +108,22 @@ public class MainActivity extends AppCompatActivity {
             altitude.setText(alti);
 
             SendPossition sp = new SendPossition();
-            sp.execute(longi,lati,alti,"1".toString());
+            sp.execute(longi,lati,alti,userId);
         }
 
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {
-
+;
         }
 
         @Override
         public void onProviderEnabled(String provider) {
-
+;
         }
 
         @Override
         public void onProviderDisabled(String provider) {
-
+;
         }
     };
    // @Override
@@ -225,8 +225,8 @@ public class MainActivity extends AppCompatActivity {
             conn.setDoInput(true);
 
             JSONObject jsonParam = new JSONObject();
-            jsonParam.put("Longitude", longitude);
             jsonParam.put("Latitude", latitude);
+            jsonParam.put("Longitude", longitude);
             jsonParam.put("Altitude", altitude);
             jsonParam.put("UserId", id);
 

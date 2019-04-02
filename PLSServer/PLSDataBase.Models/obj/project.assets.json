@@ -686,23 +686,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ilia\\.nuget\\packages\\": {},
+    "C:\\Users\\iliaf\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\PLSDataBase.Models.csproj",
+      "projectUniqueName": "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\PLSDataBase.Models.csproj",
       "projectName": "PLSDataBase.Models",
-      "projectPath": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\PLSDataBase.Models.csproj",
-      "packagesPath": "C:\\Users\\Ilia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ilia\\Desktop\\C#\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\obj\\",
+      "projectPath": "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\PLSDataBase.Models.csproj",
+      "packagesPath": "C:\\Users\\iliaf\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ilia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\iliaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

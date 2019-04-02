@@ -123,15 +123,17 @@ namespace PLSDesktopApi
                 foreach (var currentUser in users)
                 {
                     StringBuilder sb = new StringBuilder();
-                    var location = currentUser.Locations[currentUser.Locations.Count - 1];
-                    GMapMarker marker = new GMarkerGoogle(
-                                    new PointLatLng(location.Longitude, location.Latitude),
-                                    GMarkerGoogleType.blue_pushpin);
-                    sb.AppendLine(currentUser.PhoneNumber);
-                    sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
-                    marker.ToolTipText = sb.ToString().TrimEnd();
-                    gmapMarkers.Add(marker);
-                   
+                    if (currentUser.Locations.Count - 1 >= 0)
+                    {
+                        var location = currentUser.Locations[currentUser.Locations.Count - 1];
+                        GMapMarker marker = new GMarkerGoogle(
+                                        new PointLatLng(location.Longitude, location.Latitude),
+                                        GMarkerGoogleType.blue_pushpin);
+                        sb.AppendLine(currentUser.PhoneNumber);
+                        sb.AppendLine($"Longitude {location.Longitude} , Latitude {location.Latitude} , Altitude {location.Altitude}.");
+                        marker.ToolTipText = sb.ToString().TrimEnd();
+                        gmapMarkers.Add(marker);
+                    }
                 }
 
                 GMapOverlay markers = new GMapOverlay("markers");
