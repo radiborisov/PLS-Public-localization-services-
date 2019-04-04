@@ -27,36 +27,87 @@ namespace PLSDesktopApi
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
             GetInformation();
+         
+            GMapOverlay markers = new GMapOverlay("markers");
 
-            foreach (var user in users)
-            {
-                listBox1.Items.Add(user.PhoneNumber);
-                foreach (var location in user.Locations)
-                {
-                    AddMarkers(user, location);
-                }
-            }
+            VisualiseMarkers(markers);
+        }
 
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
             gMapControl1.DragButton = MouseButtons.Left;
             gMapControl1.MapProvider = GMapProviders.BingHybridMap;
             gMapControl1.Position = new PointLatLng(42.666551, 23.350466);
             gMapControl1.MinZoom = 5;
             gMapControl1.MaxZoom = 100;
             gMapControl1.Zoom = 10;
+        }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            gMapControl1.Overlays.Clear();
+            gmapMarkers.Clear();
 
             GMapOverlay markers = new GMapOverlay("markers");
 
-            VisualiseMarkers(markers);
+            var currentPhoneNumber = listBox1.GetItemText(listBox1.SelectedItem);
+
+            if (currentPhoneNumber.ToLower() == "All users".ToLower())
+            {
+                foreach (var currentUser in users)
+                {
+                    if (currentUser.Locations.Count - 1 >= 0)
+                    {
+                        var location = currentUser.Locations[currentUser.Locations.Count - 1];
+                        AddMarkers(currentUser, location);
+                    }
+                }
+                
+                VisualiseMarkers(markers);
+            }
+            else
+            {
+                var user = users.FirstOrDefault(p => p.PhoneNumber == currentPhoneNumber);
+
+                foreach (var location in user.Locations)
+                {
+                    AddMarkers(user, location);
+                }
+
+                VisualiseMarkers(markers);
+            }
+
+            GetInformation();
+        }
+
+        private void VisualiseMarkers(GMapOverlay markers)
+        {
+            foreach (var item in gmapMarkers)
+            {
+                gMapControl1.Overlays.Add(markers);
+                markers.Markers.Add(item);
+                gMapControl1.ShowCenter = true;
+            }
+        }
+
+        private void AddMarkers(CreateInputUser currentUser, LocationDto location)
+        {
+            StringBuilder sb = new StringBuilder();
+            GMapMarker marker = new GMarkerGoogle(
+                            new PointLatLng(location.Longitude, location.Latitude),
+                            currentUser.Marker);
+            sb.AppendLine(currentUser.PhoneNumber);
+            sb.AppendLine($"Longitude: {location.Longitude} , Latitude: {location.Latitude} , Altitude: {location.Altitude} | Date {location.Date.ToString("dd-MM-yyyy HH:mm:ss")}");
+            marker.ToolTipText = sb.ToString().TrimEnd();
+            gmapMarkers.Add(marker);
         }
 
         private void GetInformation()
         {
+            int oldUsersCount = users.Count();
+
             StringBuilder sb = new StringBuilder();
-
-
 
             string result = string.Empty;
             string url = @"http://public-localization-services-desktop-server.azurewebsites.net/return/user";
@@ -71,77 +122,35 @@ namespace PLSDesktopApi
                 result = reader.ReadToEnd();
             }
 
+            users.Clear(); 
+
             var userInput = JsonConvert.DeserializeObject<List<CreateInputUser>>(result);
 
             foreach (var user in userInput)
             {
                 users.Add(user);
             }
-        }
 
-        private void gMapControl1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            gMapControl1.Overlays.Clear();
-            var currentPhoneNumber = listBox1.GetItemText(listBox1.SelectedItem);
-            gmapMarkers.Clear();
-
-            if (currentPhoneNumber.ToLower() == "All users".ToLower())
+            if (oldUsersCount != userInput.Count)
             {
-                foreach (var currentUser in users)
-                {
-                    if (currentUser.Locations.Count - 1 >= 0)
-                    {
-                        var location = currentUser.Locations[currentUser.Locations.Count - 1];
-                        AddMarkers(currentUser, location);
-                    }
-                }
-
-                GMapOverlay markers = new GMapOverlay("markers");
-
-                VisualiseMarkers(markers);
+                UpdateListBox();
             }
-            else
-            {
-                var user = users.FirstOrDefault(p => p.PhoneNumber == currentPhoneNumber);
+        }
 
+        private void UpdateListBox()
+        {
+            listBox1.Items.Clear();
+
+            listBox1.Items.Add("All users");
+
+            foreach (var user in users)
+            {
+                listBox1.Items.Add(user.PhoneNumber);
                 foreach (var location in user.Locations)
                 {
                     AddMarkers(user, location);
                 }
-
-                GMapOverlay markers = new GMapOverlay("markers");
-
-                VisualiseMarkers(markers);
             }
-        }
-
-        private void VisualiseMarkers(GMapOverlay markers)
-        {
-            foreach (var item in gmapMarkers)
-            {
-                markers.Markers.Add(item);
-                gMapControl1.Overlays.Add(markers);
-                gMapControl1.ShowCenter = true;
-                gMapControl1.Zoom = 6;
-                gMapControl1.Zoom = 7;
-            }
-        }
-
-        private void AddMarkers(CreateInputUser currentUser, LocationDto location)
-        {
-            StringBuilder sb = new StringBuilder();
-            GMapMarker marker = new GMarkerGoogle(
-                            new PointLatLng(location.Longitude, location.Latitude),
-                            currentUser.Marker);
-            sb.AppendLine(currentUser.PhoneNumber);
-            sb.AppendLine($"Longitude: {location.Longitude} , Latitude: {location.Latitude} , Altitude: {location.Altitude} | Date {location.Date.ToString("dd-MM-yyyy HH:mm:ss")}");
-            marker.ToolTipText = sb.ToString().TrimEnd();
-            gmapMarkers.Add(marker);
         }
     }
 }
