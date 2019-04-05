@@ -28,7 +28,7 @@ namespace PLSDesktopApi
         private void Form1_Load(object sender, EventArgs e)
         {
             GetInformation();
-         
+
             GMapOverlay markers = new GMapOverlay("markers");
 
             VisualiseMarkers(markers);
@@ -47,6 +47,7 @@ namespace PLSDesktopApi
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             gMapControl1.Overlays.Clear();
+            gMapControl1.Refresh();
             gmapMarkers.Clear();
 
             GMapOverlay markers = new GMapOverlay("markers");
@@ -63,19 +64,22 @@ namespace PLSDesktopApi
                         AddMarkers(currentUser, location);
                     }
                 }
-                
+
                 VisualiseMarkers(markers);
             }
             else
             {
                 var user = users.FirstOrDefault(p => p.PhoneNumber == currentPhoneNumber);
 
-                foreach (var location in user.Locations)
+                if (user.Locations.Count > 0)
                 {
-                    AddMarkers(user, location);
-                }
+                    foreach (var location in user.Locations)
+                    {
+                        AddMarkers(user, location);
+                    }
 
-                VisualiseMarkers(markers);
+                    VisualiseMarkers(markers);
+                }
             }
 
             GetInformation();
@@ -122,7 +126,7 @@ namespace PLSDesktopApi
                 result = reader.ReadToEnd();
             }
 
-            users.Clear(); 
+            users.Clear();
 
             var userInput = JsonConvert.DeserializeObject<List<CreateInputUser>>(result);
 
