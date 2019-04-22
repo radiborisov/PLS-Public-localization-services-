@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PLSDataBase.Models;
 using PLSMobileServer.ViewModels.User;
+using PLSServer.ViewModels.Location;
 using PLSServer.ViewModels.User;
 
 namespace PLSServer.MappingConfiguration
@@ -12,6 +13,12 @@ namespace PLSServer.MappingConfiguration
             this.CreateMap<CreateInputUser, User>();
 
             this.CreateMap<User, CreateOutputUser>();
+
+            this.CreateMap<CreateInputLocation, Location>();
+
+            this.CreateMap<CreateInputUser, RegistrationQueue>();
+
+            this.CreateMap<RegisterInputUser, User>();
         }
     }
 }

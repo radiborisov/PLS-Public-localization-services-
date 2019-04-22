@@ -5,6 +5,7 @@ using PLSDataBase;
 using PLSDataBase.Models;
 using PLSMobileServer.ViewModels.User;
 using PLSServer.ViewModels.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -47,16 +48,27 @@ namespace PLSServer.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public ActionResult<int> Post(CreateInputUser userInfo)
+        public ActionResult<string> Post(RegisterInputUser userInfo)
         {
+            bool IsUserValid = this.context.RegistrationQueues.Any(x => x.PhoneNumber == userInfo.PhoneNumber &&
+            x.IsRegistered == false &&
+            x.VerificationCode == userInfo.VerificationCode);
+
             if (!ModelState.IsValid)
             {
                 return this.CreatedAtAction(nameof(Get), new { id = "Invalid Input" });
             }
-            else if (this.context.Users.Any(p => p.PhoneNumber == userInfo.PhoneNumber))
+            else if (this.context.Users.Any(x => x.PhoneNumber == userInfo.PhoneNumber) && IsUserValid)
             {
-                return this.context.Users.FirstOrDefault(p => p.PhoneNumber == userInfo.PhoneNumber).Id;
+                this.context.Users.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).Token = Guid.NewGuid();
+                this.context.SaveChanges();
+
+                return this.context.Users.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).Token.ToString();
             }
+            else if(!IsUserValid)
+            {
+                return StatusCode(404);
+            }          
 
             var user = this.mapper.Map<User>(userInfo);
 
@@ -64,13 +76,9 @@ namespace PLSServer.Controllers
 
             this.context.SaveChanges();
 
-            return this.context.Users.FirstOrDefault(p => p.PhoneNumber == userInfo.PhoneNumber).Id;
-        }
+            //TODO IMPROVE THE SECURITY            
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-
+            return this.context.Users.FirstOrDefault(p => p.PhoneNumber == userInfo.PhoneNumber).Token.ToString();
         }
     }
 }

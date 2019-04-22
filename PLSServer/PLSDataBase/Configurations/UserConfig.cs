@@ -11,9 +11,7 @@ namespace PLSDataBase.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder
-                .Property(p => p.PhoneNumber)
-                .HasColumnType("char(10)");
+
         }
     }
 }

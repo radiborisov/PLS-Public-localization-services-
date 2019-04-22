@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PLSDataBase;
 using PLSDataBase.Models;
+using PLSServer.ViewModels.Location;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,56 +14,84 @@ namespace PLSServer.Controllers
     public class LocationController : Controller
     {
         PLSDBContext context;
+        private readonly IMapper mapper;
 
-        public LocationController(PLSDBContext context)
+        public LocationController(PLSDBContext context, IMapper mapper)
         {
             this.context = context;
+            this.mapper = mapper;
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Location>> Get()
+        public ActionResult<IEnumerable<Location>> Get(string token, string phoneNumber)
         {
+            if (!CheckAutharization(token, phoneNumber))
+            {
+                return StatusCode(404);
+            }
+
             return this.context.Locations.ToList();
         }
 
-        [HttpGet("{id}")]
-        [ProducesResponseType(200)]
-        public ActionResult<Location> Get(int id)
-        {
-            var currentLocation = this.context.Locations.FirstOrDefault(x => x.Id == id);
+        //[HttpGet("{id}")]
+        //[ProducesResponseType(200)]
+        //public ActionResult<Location> Get(int id, string token)
+        //{
+        //    if (!CheckAutharization(token, id))
+        //    {
+        //        return StatusCode(401);
+        //    }
 
-            if (currentLocation == null)
-            {
-                return this.CreatedAtAction(nameof(Get), new { id = "Invalid Input" });
-            }
+        //    var user = this.context.Users.FirstOrDefault(t => t.Token == token);
 
-            return this.CreatedAtAction(nameof(Get), new { id = currentLocation.Id, currentLocation });
-        }
+        //    var currentLocation = this.context.Locations.FirstOrDefault(x => x.Id == id);
+
+        //    if (currentLocation == null)
+        //    {
+        //        return this.CreatedAtAction(nameof(Get), new { id = "Invalid Input" });
+        //    }
+
+        //    return this.CreatedAtAction(nameof(Get), new { id = currentLocation.Id, currentLocation });
+        //}
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public ActionResult<Location> Post([FromBody] Location userInfo)
+        public ActionResult<Location> Post([FromBody] CreateInputLocation locationInfo)
         {
+            if (!CheckAutharization(locationInfo.Token, locationInfo.PhoneNumber))
+            {
+                return StatusCode(401);
+            }
+
             if (!ModelState.IsValid)
             {
                 return this.CreatedAtAction(nameof(Get), new { id = "Invalid Input" });
             }
-            else if (!this.context.Users.Any(u => u.Id == userInfo.UserId))
+            else if (!this.context.Users.Any(t => t.Token.ToString() == locationInfo.Token.ToString() && t.PhoneNumber == locationInfo.PhoneNumber))
             {
                 return this.CreatedAtAction(nameof(Get), new { id = "Current devices can't be found" });
             }
 
-            this.context.Locations.Add(userInfo);
+            var location = this.mapper.Map<Location>(locationInfo);
+
+            location.UserId = this.context.Users.FirstOrDefault(x => x.PhoneNumber == locationInfo.PhoneNumber).Id;
+
+            this.context.Locations.Add(location);
 
             this.context.SaveChanges();
 
-            return this.CreatedAtAction(nameof(Get), new { id = userInfo.UserId, userInfo });
+            return StatusCode(201);
         }
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
 
+        private bool CheckAutharization(string token, string phoneNumber)
+        {
+            if (!this.context.Users.Any(t => t.Token.ToString() == token && t.PhoneNumber == phoneNumber))
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

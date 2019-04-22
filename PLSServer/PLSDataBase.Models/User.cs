@@ -27,6 +27,13 @@ namespace PLSDataBase.Models
         [Column("isonline")]
         public bool IsOnline { get; set; } = false;
 
+        [Column("token")]
+
+        public Guid Token { get; set; } = Guid.NewGuid();
+
+        [Column("secret")]
+        public Guid Secret { get; set; } = Guid.NewGuid();
+
         public List<Location> Locations { get; set; }
     }
 }
