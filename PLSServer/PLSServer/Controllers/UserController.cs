@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PLSDataBase;
@@ -25,9 +26,11 @@ namespace PLSServer.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<User>> Get()
+        public ActionResult<IEnumerable<CreateOutputUser>> Get()
         {
-            return this.context.Users.ToList();
+            return this.context.Users
+                .ProjectTo<CreateOutputUser>(mapper.ConfigurationProvider)
+                .ToList();
         }
 
         [HttpGet("{id}")]
