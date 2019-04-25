@@ -33,22 +33,6 @@ namespace PLSServer.Controllers
                 .ToList();
         }
 
-        [HttpGet("{id}")]
-        [ProducesResponseType(200)]
-        public ActionResult<CreateOutputUser> Get(string id)
-        {
-            var currentUser = this.context.Users.FirstOrDefault(x => x.PhoneNumber == id);
-
-            if (currentUser == null)
-            {
-                //TODO Log the exception
-            }
-
-            var mappedUser = this.mapper.Map<CreateOutputUser>(currentUser);
-
-            return this.CreatedAtAction(nameof(Get), new { id = mappedUser.PhoneNumber, mappedUser });
-        }
-
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         public ActionResult<string> Post(RegisterInputUser userInfo)
