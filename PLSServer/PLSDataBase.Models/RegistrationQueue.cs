@@ -13,12 +13,18 @@ namespace PLSDataBase.Models
         public int Id { get; set; }
 
         [Column("phonenumber")]
-        public string PhoneNumber { get; set; }
+        public String PhoneNumber { get; set; }
 
-        [Column("token")]
+        [Column("verificationcode")]
         public string VerificationCode { get; set; }
 
         [Column("isregistered")]
         public bool IsRegistered { get; set; } = false;
+
+        [Column("startdate")]
+        public DateTime StartDate { get; set; } = DateTime.Now;
+
+        [Column("enddate")]
+        public DateTime EndDate { get; set; } = DateTime.Now.AddMinutes(5);
     }
 }

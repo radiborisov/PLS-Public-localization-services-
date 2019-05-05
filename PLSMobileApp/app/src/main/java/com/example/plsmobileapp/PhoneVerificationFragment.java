@@ -31,16 +31,21 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import javax.net.ssl.HttpsURLConnection;
+
 public class PhoneVerificationFragment extends Fragment {
 
     private EditText verificationCode;
     private Button register;
+    private static final String fileName = "UserInfo";
     Context context;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.phone_verification, container, false);
+
+        context = ((MainActivity)getActivity()).ReturnContext();
 
         verificationCode = (EditText) view.findViewById(R.id.verificationCode);
         register = (Button) view.findViewById(R.id.checkVerification);
@@ -50,13 +55,13 @@ public class PhoneVerificationFragment extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Go to GpsActivity", Toast.LENGTH_SHORT).show();
 
-                context = ((MainActivity)getActivity()).ReturnContext();
 
-                String verifCode = verificationCode.getText().toString();
-                String phoneNumber = ReadFile("Test");
+
+                String verifyCode = verificationCode.getText().toString();
+                String phoneNumber = ReadFile();
 
                 SendVerification sendVerification = new SendVerification();
-                sendVerification.execute(phoneNumber, verifCode);
+                sendVerification.execute(phoneNumber, verifyCode);
 
                 Intent intent = new Intent(getActivity(), GpsActivity.class);
                 startActivity(intent);
@@ -67,12 +72,12 @@ public class PhoneVerificationFragment extends Fragment {
     }
 
     public void SaveToken(String token) {
-        String filename = "Test.txt";
-        String fileContents = token;
+        String phoneNumber = ReadFile();
+        String fileContents = phoneNumber + "\n" + token;
         FileOutputStream outputStream;
 
         try {
-            outputStream = context.openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream = context.openFileOutput(fileName, Context.MODE_PRIVATE);
             outputStream.write(fileContents.getBytes());
             outputStream.close();
         } catch (Exception e) {
@@ -80,10 +85,10 @@ public class PhoneVerificationFragment extends Fragment {
         }
     }
 
-    private String ReadFile(String fileName) {
+    private String ReadFile() {
 
         try{
-            FileInputStream fis = context.openFileInput("Test.txt");
+            FileInputStream fis = context.openFileInput(fileName);
             InputStreamReader isr = new InputStreamReader(fis);
             BufferedReader bufferedReader = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();
@@ -118,7 +123,7 @@ public class PhoneVerificationFragment extends Fragment {
 
 
         try {
-            URL url = new URL("https://public-localization-services.azurewebsites.net/add/user");
+            URL url = new URL("http://public-localization-services-mobile.azurewebsites.net/add/user");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
@@ -134,6 +139,8 @@ public class PhoneVerificationFragment extends Fragment {
             //os.writeBytes(URLEncoder.encode(jsonParam.toString(), "UTF-8"));
             os.writeBytes(jsonParam.toString());
 
+
+
             os.flush();
             os.close();
 
@@ -142,11 +149,27 @@ public class PhoneVerificationFragment extends Fragment {
 
             is = conn.getInputStream();
 
-            SaveToken(is.read() + "");
+            int responseCode=conn.getResponseCode();
+
+            String response = "";
+
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line=br.readLine()) != null) {
+                    response+=line;
+                }
+            }
+            else {
+                response="empty";
+
+            }
+
+            if (!response.equals("empty")){
+                SaveToken(response);
+            }
 
             conn.disconnect();
-
-
 
             return "successful";
 

@@ -42,7 +42,7 @@ namespace PLSServer.Controllers
             }
 
             Random random = new Random();
-            int randomNumber = random.Next(1000, 9999);
+            int randomNumber = random.Next(1000,9999);
 
             if (!SendSms(userInfo.PhoneNumber, randomNumber))
             {
@@ -67,8 +67,8 @@ namespace PLSServer.Controllers
             {
                 var client = new Client(creds: new Nexmo.Api.Request.Credentials
                 {
-                    ApiKey = "e1c8a75f",
-                    ApiSecret = "QhgxcVy4Jlrt1nvq"
+                    ApiKey = "6d78d2d9",
+                    ApiSecret = "McaWa0gUEg2DP4dr"
                 });
                 var results = client.SMS.Send(request: new SMS.SMSRequest
                 {

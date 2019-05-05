@@ -10,6 +10,7 @@ namespace PLSServer.ViewModels.Location
         [Required]
         public double Longitude { get; set; }
 
+        [Required]
         public double Altitude { get; set; }
 
         [Required]

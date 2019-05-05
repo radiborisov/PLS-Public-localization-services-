@@ -12,6 +12,8 @@ namespace PLSServerForDesktop.MappingConfiguration
             this.CreateMap<User, CreateUserAllView>();
 
             this.CreateMap<Location, CreateLocationAllView>();
+
+            this.CreateMap<PatchUserView, User>();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="public-localization-services-desktop-server" tags="IisApp">
+  <parameter name="IIS Web Application Name" description="" value="public-localization-services-desktop" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSServerForDesktop\\obj\\Release\\netcoreapp2\.2\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>

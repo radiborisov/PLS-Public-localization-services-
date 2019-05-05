@@ -24,7 +24,9 @@ namespace PLSDataBase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=tcp:pls-databaseserver.database.windows.net,1433;Initial Catalog=PLSDatabase;Persist Security Info=False;User ID=sqladmin;Password=Pls@dmin32;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer("Server=tcp:plsdbserver.database.windows.net,1433;Initial Catalog=PlsDatabase" +
+                ";Persist Security Info=False;User ID=sqladmin;Password=Pls@dmin32" +
+                ";MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

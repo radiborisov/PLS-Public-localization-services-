@@ -22,15 +22,16 @@ namespace PLSServer.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<Location>> Get(string token, string phoneNumber)
-        {
+        [HttpGet("{phoneNumber}/{token}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public ActionResult<List<Location>> Get(string phoneNumber, string token)
+        {          
             if (!CheckAutharization(token, phoneNumber))
             {
                 return StatusCode(404);
             }
 
-            return this.context.Locations.ToList();
+            return this.context.Locations.Where(u => u.User.PhoneNumber == phoneNumber).ToList();
         }
 
         //[HttpGet("{id}")]

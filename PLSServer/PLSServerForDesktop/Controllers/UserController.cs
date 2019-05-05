@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using PLSDataBase;
 using PLSServerForDesktop.ViewModels.Users;
@@ -40,23 +42,29 @@ namespace PLSServerForDesktop.Controllers
             return userLocations;
         }
 
-        // GET api/values/5
-        public void Post([FromBody] string value)
-        {
-        }
-
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
         // POST api/values
         [HttpPost]
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{id}/")]
+        public void Put(string token, [FromBody] string value)
         {
+        }
+
+        [HttpPatch("update/{phoneNumber}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public ActionResult<bool> Patch(string phoneNumber, [FromBody]JsonPatchDocument<PatchUserView> jsonPatch)
+        {
+            var user = this.context.Users.FirstOrDefault(x => x.PhoneNumber == phoneNumber);
+            var userDto = mapper.Map<PatchUserView>(jsonPatch);
+
+            jsonPatch.ApplyTo(userDto);
+
+            mapper.Map(userDto, user);
+
+            this.context.Update(user);
+            this.context.SaveChanges();
+
+            return true;
         }
 
         // DELETE api/values/5

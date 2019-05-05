@@ -25,12 +25,18 @@ namespace PLSServer.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<CreateOutputUser>> Get()
+        [HttpGet("{phoneNumber}/{token}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public ActionResult<bool> Get(string phoneNumber, string token)
         {
-            return this.context.Users
-                .ProjectTo<CreateOutputUser>(mapper.ConfigurationProvider)
-                .ToList();
+            bool IsUserValid = this.context.Users.Any(x => x.PhoneNumber == phoneNumber && x.Token.ToString() == token);
+
+            if (!IsUserValid)
+            {
+                return StatusCode(404);
+            }
+
+            return true;
         }
 
         [HttpPost]
@@ -49,6 +55,8 @@ namespace PLSServer.Controllers
             {
                 this.context.Users.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).Token = Guid.NewGuid();
                 this.context.SaveChanges();
+                this.context.RegistrationQueues.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).IsRegistered = true;
+                this.context.SaveChanges();
 
                 return this.context.Users.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).Token.ToString();
             }
@@ -60,7 +68,9 @@ namespace PLSServer.Controllers
             var user = this.mapper.Map<User>(userInfo);
 
             this.context.Users.Add(user);
+            this.context.SaveChanges();
 
+            this.context.RegistrationQueues.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).IsRegistered = true;
             this.context.SaveChanges();
 
             //TODO IMPROVE THE SECURITY            

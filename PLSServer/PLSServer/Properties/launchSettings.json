@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "add/user",
+      "launchUrl": "add/phoneverification",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

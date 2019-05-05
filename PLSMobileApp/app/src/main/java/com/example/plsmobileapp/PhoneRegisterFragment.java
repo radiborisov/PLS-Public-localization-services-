@@ -1,9 +1,9 @@
 package com.example.plsmobileapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,29 +21,41 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PhoneRegisterFragment extends Fragment {
 
     private static final String TAG = "PhoneFragment";
+    private static final String fileName = "UserInfo";
 
     private EditText phoneNumber;
     private Button sendSms;
+
+    Context context;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.phone_registration, container, false);
 
-        final Context context = ((MainActivity)getActivity()).ReturnContext();
+        context = ((MainActivity)getActivity()).ReturnContext();
+
+        if (!IsFileEmpty(fileName)){
+            if (IsTheUserVerified()){
+                Intent intent = new Intent(getActivity(), GpsActivity.class);
+                startActivity(intent);
+            }
+        }
+
 
         phoneNumber = (EditText) view.findViewById(R.id.phonenumber);
         sendSms = (Button) view.findViewById(R.id.register);
@@ -55,10 +67,11 @@ public class PhoneRegisterFragment extends Fragment {
 
                 String phoneNum = phoneNumber.getText().toString();
 
+               // SaveFile(phoneNum);
+
                 SendRegister sendRegister = new SendRegister();
                 sendRegister.execute(phoneNum);
 
-                SaveThePhoneNumber(context, phoneNum);
 
                 ((MainActivity)getActivity()).setViewPager(1);
             }
@@ -67,25 +80,53 @@ public class PhoneRegisterFragment extends Fragment {
         return  view;
     }
 
-    private String ReadFile(Context context,String fileName) {
+    private boolean IsTheUserVerified() {
+        String[] userInfo =  ReadFileInfo(fileName).split("\n");
 
-        try{
-            FileInputStream fis = context.openFileInput("Test.txt");
-            InputStreamReader isr = new InputStreamReader(fis);
-            BufferedReader bufferedReader = new BufferedReader(isr);
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                sb.append(line);
+        String userPhoneNumber = userInfo[0];
+        String userToken = userInfo[1];
+
+        RequestTask requestTask = new RequestTask();
+
+        try {
+            int result = requestTask.execute(userPhoneNumber, userToken).get();
+
+            if (result != 200){
+                return false;
             }
 
-            return  bufferedReader.readLine();
-        }catch (IOException e){
-            return "False";
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
 
 
+        return true;
+    }
+
+    class RequestTask extends AsyncTask<String, Integer, Integer>{
+
+        @Override
+        protected Integer doInBackground(String... uri) {
+            int  result = 0;
+            try {
+                URL reqURL = new URL("https://public-localization-services-mobile.azurewebsites.net/add/user/" + uri[0]  + "/" + uri[1]); //the URL we will send the request to
+                HttpURLConnection request = (HttpURLConnection)(reqURL.openConnection());
+                request.setRequestMethod("GET");
+                request.connect();
+
+                result = request.getResponseCode();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            return result;
+        }
     }
 
     private class SendRegister extends AsyncTask<String,Void,String> {
@@ -108,7 +149,7 @@ public class PhoneRegisterFragment extends Fragment {
 
 
         try {
-            URL url = new URL("https://public-localization-services.azurewebsites.net/add/phoneverification");
+            URL url = new URL("http://public-localization-services-mobile.azurewebsites.net/add/phoneverification");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
@@ -123,6 +164,8 @@ public class PhoneRegisterFragment extends Fragment {
             //os.writeBytes(URLEncoder.encode(jsonParam.toString(), "UTF-8"));
             os.writeBytes(jsonParam.toString());
 
+            SaveFile(phoneNumber);
+
             os.flush();
             os.close();
 
@@ -130,7 +173,6 @@ public class PhoneRegisterFragment extends Fragment {
             Log.i("MSG", conn.getResponseMessage());
 
             is = conn.getInputStream();
-
 
             conn.disconnect();
 
@@ -145,17 +187,73 @@ public class PhoneRegisterFragment extends Fragment {
     }
 
 
-    public void SaveThePhoneNumber(Context context, String phoneNumber) {
-        String filename = "Test.txt";
-        String fileContents = phoneNumber;
-        FileOutputStream outputStream;
+    private void SaveFile(String phoneNumber) {
 
         try {
-            outputStream = context.openFileOutput(filename, Context.MODE_PRIVATE);
-            outputStream.write(fileContents.getBytes());
-            outputStream.close();
+            FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
+            fos.write(phoneNumber.getBytes());
+            fos.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+    }
+
+    private boolean FileExists(String fileName){
+        File file = new File(context.getFilesDir(), fileName);
+        return file.exists();
+    }
+
+    private String ReadFileInfo(String fileName){
+
+        try {
+            BufferedReader inputReader = new BufferedReader(new InputStreamReader(
+                    context.openFileInput(fileName)));
+            String inputString;
+            StringBuffer stringBuffer = new StringBuffer();
+            while ((inputString = inputReader.readLine()) != null) {
+                stringBuffer.append(inputString + "\n");
+            }
+            return stringBuffer.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "empty";
+        }
+    }
+
+    private boolean IsFileEmpty(String fileName){
+        String info = "";
+        boolean isEmpty = true;
+        if (!FileExists(fileName)){
+            return isEmpty;
+        }
+
+        info = ReadFileInfo(fileName);
+
+        if (info.equals("empty")){
+            return true;
+        }
+
+        Pattern pattern = Pattern.compile("^[0-9]+\\n");
+
+        Matcher matcher = pattern.matcher(info);
+
+        if (matcher.find()){
+            isEmpty = false;
+        }else {
+            return true;
+        }
+
+        Pattern pattern2 = Pattern.compile("\\n(.+)");
+
+        matcher = pattern2.matcher(info);
+        if (matcher.find()){
+            isEmpty = false;
+        }else {
+            return true;
+        }
+
+        return isEmpty;
+
     }
 }

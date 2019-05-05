@@ -11,8 +11,8 @@ namespace PLSDataBase.Initilizer.Generators
         {
             string[] stringUsers = new string[]
             {
-                "0888014990",
-                "0887512119",
+                "0864524343",
+                "0835325321",
                 "0875312345"
             };
 
