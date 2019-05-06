@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using PLSDataBase;
+using PLSDataBase.Models;
 using PLSServerForDesktop.ViewModels.Users;
 using System;
 using System.Collections.Generic;
@@ -40,31 +41,22 @@ namespace PLSServerForDesktop.Controllers
                 .ToList();
 
             return userLocations;
-        }
-
-        // POST api/values
-        [HttpPost]
-        // PUT api/values/5
-        [HttpPut("{id}/")]
-        public void Put(string token, [FromBody] string value)
+        }                                                       
+                                                                
+        // POST api/values                                      
+        [HttpPost]                                              
+        // PUT api/values/5                                     
+        [HttpPut("{secret}")]                                       
+        public ActionResult<User> Put(string secret, [FromBody] PutUserView userInfo)
         {
-        }
+            var user = this.context.Users.FirstOrDefault(x => x.Secret.ToString() == secret);
 
-        [HttpPatch("update/{phoneNumber}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<bool> Patch(string phoneNumber, [FromBody]JsonPatchDocument<PatchUserView> jsonPatch)
-        {
-            var user = this.context.Users.FirstOrDefault(x => x.PhoneNumber == phoneNumber);
-            var userDto = mapper.Map<PatchUserView>(jsonPatch);
+            user.IsSavioer = userInfo.IsSavioer;
 
-            jsonPatch.ApplyTo(userDto);
-
-            mapper.Map(userDto, user);
-
-            this.context.Update(user);
+            this.context.Users.Update(user);
             this.context.SaveChanges();
 
-            return true;
+            return NoContent();
         }
 
         // DELETE api/values/5

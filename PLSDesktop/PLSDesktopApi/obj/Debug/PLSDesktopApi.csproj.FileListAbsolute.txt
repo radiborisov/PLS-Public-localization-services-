@@ -156,3 +156,30 @@ C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSDesktop\PLSDesktop
 C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.CopyComplete
 C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe
 C:\Users\Ilia\Desktop\C#\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.pdb
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\PLSDesktopApi.exe.config
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\PLSDesktopApi.exe
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\PLSDesktopApi.pdb
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\EntityFramework.dll
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\GMap.NET.Core.dll
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\GMap.NET.WindowsForms.dll
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\GMap.NET.WindowsPresentation.dll
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.dll
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\EntityFramework.xml
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\Newtonsoft.Json.pdb
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.xml
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\System.Data.SQLite.dll.config
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csprojAssemblyReference.cache
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe.config
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.Form1.resources
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.Properties.Resources.resources
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.GenerateResource.cache
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.CoreCompileInputs.cache
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.CopyComplete
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe
+D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.pdb

@@ -114,7 +114,7 @@ namespace PLSDesktopApi
             StringBuilder sb = new StringBuilder();
 
             string result = string.Empty;
-            string url = @"http://public-localization-services-desktop-server.azurewebsites.net/return/user";
+            string url = @"http://public-localization-services-desktop.azurewebsites.net/return/user";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.AutomaticDecompression = DecompressionMethods.GZip;
