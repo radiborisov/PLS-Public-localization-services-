@@ -82,6 +82,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Colors\SeeThroughPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Models\User\CreateInputUser.cs" />
     <Compile Include="Models\Location\LocationDto.cs" />
     <Compile Include="Program.cs" />

@@ -13,7 +13,7 @@ namespace PLSDesktopApi.Models.User
     {
         public string PhoneNumber { get; set; }
 
-        public bool IsSavioer { get; set; }
+        public bool IsSavior { get; set; }
 
         public bool IsOnline { get; set; }
 
@@ -23,7 +23,7 @@ namespace PLSDesktopApi.Models.User
 
         private GMarkerGoogleType SetMarker()
         {
-            if (IsSavioer)
+            if (IsSavior)
             {
                 return GMarkerGoogleType.red_small;
             }

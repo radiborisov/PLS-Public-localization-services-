@@ -21,8 +21,8 @@ namespace PLSDataBase.Models
         [Column("phonenumber")]
         public string PhoneNumber { get; set; }
 
-        [Column("issavioer")]
-        public bool IsSavioer { get; set; } = false;
+        [Column("issavior")]
+        public bool IsSavior { get; set; } = false;
  
         [Column("isonline")]
         public bool IsOnline { get; set; } = false;

@@ -23,7 +23,7 @@ namespace PLSDataBase.Initilizer.Generators
                 User newUser = new User
                 {
                     PhoneNumber = stringUsers[i],
-                    IsSavioer = true,
+                    IsSavior = true,
                     IsOnline = true
                 };
                 users[i] = newUser;

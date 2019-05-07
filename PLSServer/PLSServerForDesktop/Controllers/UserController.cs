@@ -33,7 +33,7 @@ namespace PLSServerForDesktop.Controllers
                 .Select(x => new
                 {
                     x.PhoneNumber,
-                    x.IsSavioer,
+                    x.IsSavior,
                     x.IsOnline,
                     Locations = x.Locations.Where(l => l.Date.Day == DateTime.Now.Day)
                 })
@@ -51,7 +51,7 @@ namespace PLSServerForDesktop.Controllers
         {
             var user = this.context.Users.FirstOrDefault(x => x.Secret.ToString() == secret);
 
-            user.IsSavioer = userInfo.IsSavioer;
+            user.IsSavior = userInfo.IsSavioer;
 
             this.context.Users.Update(user);
             this.context.SaveChanges();
