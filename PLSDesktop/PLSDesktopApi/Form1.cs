@@ -25,7 +25,6 @@ namespace PLSDesktopApi
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -63,11 +62,11 @@ namespace PLSDesktopApi
             {
                 foreach (var user in users)
                 {
-                    userBox.Items.Add(user.PhoneNumber);
-                    foreach (var location in user.Locations)
-                    {
-                        AddMarkers(user, location);
-                    }
+                    int lastLocationIndex = user.Locations.Count - 1;
+
+                    userBox.Items.Add(user.PhoneNumber);      
+                    
+                    AddMarkers(user, user.Locations[lastLocationIndex]);                  
                 }
             }
             else
@@ -168,7 +167,7 @@ namespace PLSDesktopApi
 
             var currentPhoneNumber = userBox.GetItemText(userBox.SelectedItem);
 
-            if (currentPhoneNumber.ToLower() == "All users".ToLower())
+            if (currentPhoneNumber.ToLower() == "All users".ToLower() || currentPhoneNumber == "")
             {
                 foreach (var currentUser in users)
                 {

@@ -9,6 +9,6 @@ namespace PLSServerForDesktop.ViewModels.Users
     {
         public string PhoneNumber { get; set; }
 
-        public bool IsSavioer { get; set; }
+        public bool IsSavior { get; set; }
     }
 }

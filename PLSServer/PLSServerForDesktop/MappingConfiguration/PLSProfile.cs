@@ -14,7 +14,7 @@ namespace PLSServerForDesktop.MappingConfiguration
             this.CreateMap<Location, CreateLocationAllView>();
 
             this.CreateMap<PutUserView, User>()
-                .ForMember(x => x.IsSavior, y => y.MapFrom(x => x.IsSavioer))
+                .ForMember(x => x.IsSavior, y => y.MapFrom(x => x.IsSavior))
                 .ForMember(x => x.PhoneNumber, opt => opt.Ignore());
 
         }

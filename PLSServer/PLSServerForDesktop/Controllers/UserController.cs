@@ -51,7 +51,7 @@ namespace PLSServerForDesktop.Controllers
         {
             var user = this.context.Users.FirstOrDefault(x => x.Secret.ToString() == secret);
 
-            user.IsSavior = userInfo.IsSavioer;
+            user.IsSavior = userInfo.IsSavior;
 
             this.context.Users.Update(user);
             this.context.SaveChanges();
