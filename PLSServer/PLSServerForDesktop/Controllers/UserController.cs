@@ -47,9 +47,13 @@ namespace PLSServerForDesktop.Controllers
         [HttpPost]                                              
         // PUT api/values/5                                     
         [HttpPut("{secret}")]                                       
-        public ActionResult<User> Put(string secret, [FromBody] PutUserView userInfo)
+        public ActionResult<User> Put(string token, [FromBody] PutUserView userInfo)
         {
-            var user = this.context.Users.FirstOrDefault(x => x.Secret.ToString() == secret);
+            if (!this.context.Users.Any(x => x.PhoneNumber == userInfo.PhoneNumber))
+            {
+                return StatusCode(404);
+            }
+            var user = this.context.Users.FirstOrDefault(x => x.Token.ToString() == token);
 
             user.IsSavior = userInfo.IsSavior;
 

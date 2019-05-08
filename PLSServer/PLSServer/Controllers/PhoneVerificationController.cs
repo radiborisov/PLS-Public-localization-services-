@@ -42,12 +42,12 @@ namespace PLSServer.Controllers
             }
 
             Random random = new Random();
-            int randomNumber = random.Next(1000,9999);
+            int randomNumber = 4444;
 
-            if (!SendSms(userInfo.PhoneNumber, randomNumber))
-            {
-                return StatusCode(404);
-            }
+            //if (!SendSms(userInfo.PhoneNumber, randomNumber))
+            //{
+            //    return StatusCode(404);
+            //}
 
             var user = this.mapper.Map<RegistrationQueue>(userInfo);
             user.VerificationCode = randomNumber.ToString();

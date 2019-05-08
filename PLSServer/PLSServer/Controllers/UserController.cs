@@ -77,5 +77,24 @@ namespace PLSServer.Controllers
 
             return this.context.Users.FirstOrDefault(p => p.PhoneNumber == userInfo.PhoneNumber).Token.ToString();
         }
+
+        // PUT api/values/5                                     
+        [HttpPut]
+        public ActionResult<User> Put([FromBody] ChangeUserCondition userInfo)
+        {
+            if (!this.context.Users.Any(x => x.PhoneNumber == userInfo.PhoneNumber))
+            {
+                return StatusCode(404);
+            }
+        
+            var user = this.context.Users.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber && x.Token.ToString() == userInfo.Token);
+
+            user.IsInDanger = userInfo.IsInDanger;
+
+            this.context.Users.Update(user);
+            this.context.SaveChanges();
+
+            return NoContent();
+        }
     }
 }

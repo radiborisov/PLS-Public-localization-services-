@@ -28,6 +28,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".GpsActivity"></activity>
+        <activity android:name=".PopEmergencyWindow"
+            android:theme="@style/AppTheme.EmergencyWindowTheme">
+        </activity>
     </application>
 
 </manifest>

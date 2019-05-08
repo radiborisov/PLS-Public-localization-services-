@@ -3,6 +3,7 @@ package com.example.plsmobileapp;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -28,6 +29,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 
 
@@ -45,6 +48,10 @@ public class GpsActivity extends Activity implements SensorEventListener {
     private String phoneNumber = "";
     private String token = "";
 
+    private Button saveMeButton;
+
+    private Button startGpsActivityButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +59,11 @@ public class GpsActivity extends Activity implements SensorEventListener {
         sensorEventListener = this;
         setContentView(R.layout.activity_startgps);
 
-        Button button = findViewById(R.id.startgpsactivity);
+        startGpsActivityButton = findViewById(R.id.startgpsactivity);
 
-        button.setOnClickListener(new View.OnClickListener() {
+
+
+        startGpsActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String[] userInfo = ReadFileInfo(fileName).split("\n");
@@ -64,6 +73,8 @@ public class GpsActivity extends Activity implements SensorEventListener {
                 }
 
                 setContentView(R.layout.activity_gps);
+
+                saveMeButton = findViewById(R.id.saveMeButton);
 
                 phoneNumber = userInfo[0];
                 token = userInfo[1];
@@ -115,6 +126,14 @@ public class GpsActivity extends Activity implements SensorEventListener {
                 senSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
                 senAccelerometer = senSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
                 senSensorManager.registerListener(sensorEventListener, senAccelerometer , SensorManager.SENSOR_DELAY_NORMAL);
+
+                saveMeButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(GpsActivity.this, PopEmergencyWindow.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
     }
@@ -216,5 +235,13 @@ public class GpsActivity extends Activity implements SensorEventListener {
 
     }
 
+    public String[] GetUserInfo(){
+        String[] userInfo = new String[2];
+
+        userInfo[0] = phoneNumber;
+        userInfo[1] = token;
+
+        return userInfo;
+    }
 
 }

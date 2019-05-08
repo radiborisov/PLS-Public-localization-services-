@@ -27,8 +27,10 @@ namespace PLSDataBase.Models
         [Column("isonline")]
         public bool IsOnline { get; set; } = false;
 
-        [Column("token")]
+        [Column("isindanger")]
+        public bool IsInDanger { get; set; } = false;
 
+        [Column("token")]
         public Guid Token { get; set; } = Guid.NewGuid();
 
         [Column("secret")]

@@ -64,9 +64,14 @@ namespace PLSDesktopApi
                 {
                     int lastLocationIndex = user.Locations.Count - 1;
 
-                    userBox.Items.Add(user.PhoneNumber);      
-                    
-                    AddMarkers(user, user.Locations[lastLocationIndex]);                  
+                    userBox.Items.Add(user.PhoneNumber);
+
+                    if (lastLocationIndex >= 0)
+                    {
+                       
+
+                        AddMarkers(user, user.Locations[lastLocationIndex]);
+                    }              
                 }
             }
             else
@@ -198,7 +203,7 @@ namespace PLSDesktopApi
                             break;
                         }
 
-                        AddPolygonesLines(user, user.Locations[i], user.Locations[i+1]);
+                        AddPolygonesLines(user, user.Locations[i], user.Locations[i + 1]);
                     }
 
 
@@ -211,7 +216,7 @@ namespace PLSDesktopApi
         {
             StringBuilder sb = new StringBuilder();
             GMapMarker marker = new GMarkerGoogle(
-                            new PointLatLng(location.Longitude, location.Latitude),
+                            new PointLatLng(location.Latitude, location.Longitude),
                             currentUser.Marker);
             sb.AppendLine(currentUser.PhoneNumber);
             sb.AppendLine($"Longitude: {location.Longitude} , Latitude: {location.Latitude} , Altitude: {location.Altitude} | Date {location.Date.ToString("dd-MM-yyyy HH:mm:ss")}");
@@ -222,9 +227,9 @@ namespace PLSDesktopApi
         private void AddPolygonesLines(CreateInputUser currentUser, LocationDto location1, LocationDto location2)
         {
             GMapOverlay polyOverlay = new GMapOverlay("polygons");
-            List<PointLatLng> points = new List<PointLatLng>();          
-            points.Add(new PointLatLng(location1.Longitude, location1.Latitude));       
-            points.Add(new PointLatLng(location2.Longitude, location2.Latitude));       
+            List<PointLatLng> points = new List<PointLatLng>();
+            points.Add(new PointLatLng(location1.Latitude, location1.Longitude));
+            points.Add(new PointLatLng(location2.Latitude, location2.Longitude));
             GMapPolygon polygon = new GMapPolygon(points, "mypolygon");
             polygon.Fill = new SolidBrush(Color.FromArgb(50, Color.Red));
             polygon.Stroke = new Pen(Color.Red, 1);

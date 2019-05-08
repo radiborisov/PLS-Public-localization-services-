@@ -20,7 +20,7 @@ namespace SandProject
             using (PLSDBContext context = new PLSDBContext())
             {
                 Console.WriteLine(DbInitilizer.ResetDataBase(context));
-              
+                
 
 
 
