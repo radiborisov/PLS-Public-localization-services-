@@ -118,9 +118,9 @@ public class GpsActivity extends Activity implements SensorEventListener {
                     // for ActivityCompat#requestPermissions for more details.
                     return;
                 }
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 0, locationListener);
+                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 50, locationListener);
                 Log.v("Gibbons","setting location updates from GPS provider");
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 0, locationListener);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 50, locationListener);
 
 
                 senSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
