@@ -31,6 +31,11 @@
         <activity android:name=".PopEmergencyWindow"
             android:theme="@style/AppTheme.EmergencyWindowTheme">
         </activity>
+        <activity android:name=".LoadingScreenForVerification"
+            android:theme="@style/AppTheme.EmergencyWindowTheme"></activity>
+        <activity android:name=".PhoneVerificationActivity"></activity>
+        <activity android:name=".LoadingScreenForGpsActivity"
+            android:theme="@style/AppTheme.EmergencyWindowTheme"></activity>
     </application>
 
 </manifest>

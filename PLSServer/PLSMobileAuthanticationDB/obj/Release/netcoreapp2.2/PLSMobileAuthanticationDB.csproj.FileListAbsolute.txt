@@ -1,0 +1,14 @@
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.deps.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.csproj.CoreCompileInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.AssemblyInfoInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.AssemblyInfo.cs
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.csprojAssemblyReference.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.runtimeconfig.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.runtimeconfig.dev.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.csproj.CopyComplete
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.pdb

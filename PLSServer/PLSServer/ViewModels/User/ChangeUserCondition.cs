@@ -16,6 +16,9 @@ namespace PLSServer.ViewModels.User
         public bool IsInDanger { get; set; }
 
         [Required]
+        public string Message { get; set; }
+
+        [Required]
         public string Token { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PLSDataBase;
+using PLSDesktopAuthanticationDB;
 using PLSServerForDesktop.MappingConfiguration;
 
 namespace PLSServerForDesktop
@@ -27,6 +28,12 @@ namespace PLSServerForDesktop
                 UseSqlServer(this.
                 Configuration.
                 GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<PLSDesktopAuthanticationDBContext>
+               (options => options.
+               UseSqlServer(this.
+               Configuration.
+               GetConnectionString("PLSDesktopAuthanticationDbConnection")));
 
             services
                .AddAutoMapper(am => am.AddProfile<PLSProfile>());

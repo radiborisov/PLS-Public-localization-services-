@@ -39,44 +39,44 @@ namespace PLSServer.Controllers
             return true;
         }
 
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        public ActionResult<string> Post(RegisterInputUser userInfo)
-        {
-            bool IsUserValid = this.context.RegistrationQueues.Any(x => x.PhoneNumber == userInfo.PhoneNumber &&
-            x.IsRegistered == false &&
-            x.VerificationCode == userInfo.VerificationCode);
+        //[HttpPost]
+        //[ProducesResponseType(StatusCodes.Status201Created)]
+        //public ActionResult<string> Post(RegisterInputUser userInfo)
+        //{
+        //    bool IsUserValid = this.context.RegistrationQueues.Any(x => x.PhoneNumber == userInfo.PhoneNumber &&
+        //    x.IsRegistered == false &&
+        //    x.VerificationCode == userInfo.VerificationCode);
 
-            if (!ModelState.IsValid)
-            {
-                return this.CreatedAtAction(nameof(Get), new { id = "Invalid Input" });
-            }
-            else if (this.context.Users.Any(x => x.PhoneNumber == userInfo.PhoneNumber) && IsUserValid)
-            {
-                this.context.Users.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).Token = Guid.NewGuid();
-                this.context.SaveChanges();
-                this.context.RegistrationQueues.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).IsRegistered = true;
-                this.context.SaveChanges();
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return this.CreatedAtAction(nameof(Get), new { id = "Invalid Input" });
+        //    }
+        //    else if (this.context.Users.Any(x => x.PhoneNumber == userInfo.PhoneNumber) && IsUserValid)
+        //    {
+        //        this.context.Users.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).Token = Guid.NewGuid();
+        //        this.context.SaveChanges();
+        //        this.context.RegistrationQueues.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).IsRegistered = true;
+        //        this.context.SaveChanges();
 
-                return this.context.Users.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).Token.ToString();
-            }
-            else if(!IsUserValid)
-            {
-                return StatusCode(404);
-            }          
+        //        return this.context.Users.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).Token.ToString();
+        //    }
+        //    else if(!IsUserValid)
+        //    {
+        //        return StatusCode(404);
+        //    }          
 
-            var user = this.mapper.Map<User>(userInfo);
+        //    var user = this.mapper.Map<User>(userInfo);
 
-            this.context.Users.Add(user);
-            this.context.SaveChanges();
+        //    this.context.Users.Add(user);
+        //    this.context.SaveChanges();
 
-            this.context.RegistrationQueues.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).IsRegistered = true;
-            this.context.SaveChanges();
+        //    this.context.RegistrationQueues.FirstOrDefault(x => x.PhoneNumber == userInfo.PhoneNumber).IsRegistered = true;
+        //    this.context.SaveChanges();
 
-            //TODO IMPROVE THE SECURITY            
+        //    //TODO IMPROVE THE SECURITY            
 
-            return this.context.Users.FirstOrDefault(p => p.PhoneNumber == userInfo.PhoneNumber).Token.ToString();
-        }
+        //    return this.context.Users.FirstOrDefault(p => p.PhoneNumber == userInfo.PhoneNumber).Token.ToString();
+        //}
 
         // PUT api/values/5                                     
         [HttpPut]
@@ -92,6 +92,15 @@ namespace PLSServer.Controllers
             user.IsInDanger = userInfo.IsInDanger;
 
             this.context.Users.Update(user);
+            this.context.SaveChanges();
+
+            var emergencyMessage = new UserEmergencyMessage
+            {
+                Message = userInfo.Message,
+                UserId = user.Id
+            };
+
+            this.context.UserEmergencyMessages.Add(emergencyMessage);
             this.context.SaveChanges();
 
             return NoContent();

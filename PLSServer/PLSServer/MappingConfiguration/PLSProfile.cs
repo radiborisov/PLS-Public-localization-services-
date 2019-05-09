@@ -16,8 +16,6 @@ namespace PLSServer.MappingConfiguration
 
             this.CreateMap<CreateInputLocation, Location>();
 
-            this.CreateMap<CreateInputUser, RegistrationQueue>();
-
             this.CreateMap<RegisterInputUser, User>();
 
             this.CreateMap<ChangeUserCondition, User>();

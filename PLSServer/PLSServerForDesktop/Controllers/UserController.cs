@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using PLSDataBase;
 using PLSDataBase.Models;
+using PLSDesktopAuthanticationDB;
 using PLSServerForDesktop.ViewModels.Users;
 using System;
 using System.Collections.Generic;
@@ -18,17 +19,24 @@ namespace PLSServerForDesktop.Controllers
     {
         private PLSDBContext context;
         private readonly IMapper mapper;
+        private readonly PLSDesktopAuthanticationDBContext dBContext;
 
-        public UserController(PLSDBContext context, IMapper mapper)
+        public UserController(PLSDBContext context, IMapper mapper, PLSDesktopAuthanticationDBContext dBContext)
         {
             this.context = context;
             this.mapper = mapper;
+            this.dBContext = dBContext;
         }
 
         // GET api/values
-        [HttpGet]
-        public ActionResult<List<CreateUserAllView>> Get()
+        [HttpGet("secretKey")]
+        public ActionResult<List<CreateUserAllView>> Get(string secretKey)
         {
+            if (!this.dBContext.PLSDesktopUsers.Any(x => x.SecretKey.ToString() == secretKey))
+            {
+                return StatusCode(404);
+            }
+
             var userLocations = this.context.Users
                 .Select(x => new
                 {

@@ -9,6 +9,8 @@
       "SandProject/1.0.0": {
         "dependencies": {
           "PLSDataBase.Initilizer": "1.0.0",
+          "PLSDesktopAuthanticationDB": "1.0.0",
+          "PLSMobileAuthanticationDB": "1.0.0",
           "PLSServer": "1.0.0"
         },
         "runtime": {
@@ -2214,6 +2216,42 @@
           "PLSDataBase.Models.dll": {}
         }
       },
+      "PLSDesktopAuthanticationDB/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
+          "Nexmo.Csharp.Client": "3.3.1",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.1",
+          "PLSDesktopAuthanticationDB.Models": "1.0.0"
+        },
+        "runtime": {
+          "PLSDesktopAuthanticationDB.dll": {}
+        }
+      },
+      "PLSDesktopAuthanticationDB.Models/1.0.0": {
+        "runtime": {
+          "PLSDesktopAuthanticationDB.Models.dll": {}
+        }
+      },
+      "PLSMobileAuthanticationDB/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
+          "Nexmo.Csharp.Client": "3.3.1",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.1",
+          "PLSMobileAuthanticationDB.Models": "1.0.0"
+        },
+        "runtime": {
+          "PLSMobileAuthanticationDB.dll": {}
+        }
+      },
+      "PLSMobileAuthanticationDB.Models/1.0.0": {
+        "runtime": {
+          "PLSMobileAuthanticationDB.Models.dll": {}
+        }
+      },
       "PLSServer/1.0.0": {
         "dependencies": {
           "AutoMapper": "8.1.0",
@@ -3555,6 +3593,26 @@
       "sha512": ""
     },
     "PLSDataBase.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PLSDesktopAuthanticationDB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PLSDesktopAuthanticationDB.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PLSMobileAuthanticationDB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PLSMobileAuthanticationDB.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

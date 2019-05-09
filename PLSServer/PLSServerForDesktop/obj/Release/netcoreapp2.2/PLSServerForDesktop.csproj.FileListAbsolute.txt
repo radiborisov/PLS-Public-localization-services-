@@ -74,3 +74,7 @@ D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServerForDesktop\obj\
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServerForDesktop\obj\Release\netcoreapp2.2\PLSServerForDesktop.csproj.CopyComplete
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServerForDesktop\obj\Release\netcoreapp2.2\PLSServerForDesktop.dll
 D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServerForDesktop\obj\Release\netcoreapp2.2\PLSServerForDesktop.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServerForDesktop\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServerForDesktop\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServerForDesktop\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSServerForDesktop\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.pdb

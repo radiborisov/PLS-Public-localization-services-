@@ -32,6 +32,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.net.ssl.HttpsURLConnection;
+
 public class PhoneRegisterFragment extends Fragment {
 
     private static final String TAG = "PhoneFragment";
@@ -65,7 +67,7 @@ public class PhoneRegisterFragment extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Going to register fragment",Toast.LENGTH_SHORT).show();
 
-                String phoneNum = phoneNumber.getText().toString();
+                String phoneNum = phoneNumber.getText().toString().trim();
 
                // SaveFile(phoneNum);
 
@@ -73,7 +75,8 @@ public class PhoneRegisterFragment extends Fragment {
                 sendRegister.execute(phoneNum);
 
 
-                ((MainActivity)getActivity()).setViewPager(1);
+                Intent intent = new Intent(context, PhoneVerificationActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -112,7 +115,7 @@ public class PhoneRegisterFragment extends Fragment {
         protected Integer doInBackground(String... uri) {
             int  result = 0;
             try {
-                URL reqURL = new URL("https://public-localization-services-mobile.azurewebsites.net/add/user/" + uri[0]  + "/" + uri[1]); //the URL we will send the request to
+                URL reqURL = new URL("http://public-localization-services-authentication.azurewebsites.net/mobilelogin/" + uri[0]  + "/" + uri[1]); //the URL we will send the request to
                 HttpURLConnection request = (HttpURLConnection)(reqURL.openConnection());
                 request.setRequestMethod("GET");
                 request.connect();
@@ -149,7 +152,7 @@ public class PhoneRegisterFragment extends Fragment {
 
 
         try {
-            URL url = new URL("http://public-localization-services-mobile.azurewebsites.net/add/phoneverification");
+            URL url = new URL("http://public-localization-services-authentication.azurewebsites.net/add/mobileregister");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
@@ -164,8 +167,6 @@ public class PhoneRegisterFragment extends Fragment {
             //os.writeBytes(URLEncoder.encode(jsonParam.toString(), "UTF-8"));
             os.writeBytes(jsonParam.toString());
 
-            SaveFile(phoneNumber);
-
             os.flush();
             os.close();
 
@@ -173,6 +174,29 @@ public class PhoneRegisterFragment extends Fragment {
             Log.i("MSG", conn.getResponseMessage());
 
             is = conn.getInputStream();
+
+            int responseCode=conn.getResponseCode();
+
+            String response = "";
+
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line=br.readLine()) != null) {
+                    response+=line;
+                }
+
+            }
+            else {
+                response="empty";
+
+            }
+
+            if (!response.equals("empty")){
+                SaveFile(phoneNumber, response);
+            }else {
+
+            }
 
             conn.disconnect();
 
@@ -187,11 +211,12 @@ public class PhoneRegisterFragment extends Fragment {
     }
 
 
-    private void SaveFile(String phoneNumber) {
+    private void SaveFile(String phoneNumber, String secretKey) {
 
+        String saveUserInfo = phoneNumber + "\n" + secretKey;
         try {
             FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
-            fos.write(phoneNumber.getBytes());
+            fos.write(saveUserInfo.getBytes());
             fos.close();
         } catch (Exception e) {
             e.printStackTrace();

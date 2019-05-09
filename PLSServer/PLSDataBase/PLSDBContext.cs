@@ -20,7 +20,7 @@ namespace PLSDataBase
 
         public DbSet<Location> Locations { get; set; }
 
-        public DbSet<RegistrationQueue> RegistrationQueues { get; set; }
+        public DbSet<UserEmergencyMessage> UserEmergencyMessages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

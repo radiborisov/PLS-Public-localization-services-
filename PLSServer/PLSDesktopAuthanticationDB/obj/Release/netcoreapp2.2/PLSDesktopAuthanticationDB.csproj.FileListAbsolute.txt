@@ -1,0 +1,14 @@
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.deps.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.csproj.CoreCompileInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.AssemblyInfoInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.AssemblyInfo.cs
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.runtimeconfig.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.runtimeconfig.dev.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.csprojAssemblyReference.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.csproj.CopyComplete

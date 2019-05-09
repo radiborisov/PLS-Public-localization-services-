@@ -30,7 +30,8 @@
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Nexmo.Csharp.Client": "3.3.1",
-          "PLSDataBase": "1.0.0"
+          "PLSDataBase": "1.0.0",
+          "PLSDesktopAuthanticationDB": "1.0.0"
         },
         "runtime": {
           "PLSServerForDesktop.dll": {}
@@ -708,6 +709,30 @@
         },
         "compile": {
           "PLSDataBase.Models.dll": {}
+        }
+      },
+      "PLSDesktopAuthanticationDB/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
+          "Nexmo.Csharp.Client": "3.3.1",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.1",
+          "PLSDesktopAuthanticationDB.Models": "1.0.0"
+        },
+        "runtime": {
+          "PLSDesktopAuthanticationDB.dll": {}
+        },
+        "compile": {
+          "PLSDesktopAuthanticationDB.dll": {}
+        }
+      },
+      "PLSDesktopAuthanticationDB.Models/1.0.0": {
+        "runtime": {
+          "PLSDesktopAuthanticationDB.Models.dll": {}
+        },
+        "compile": {
+          "PLSDesktopAuthanticationDB.Models.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3859,6 +3884,16 @@
       "sha512": ""
     },
     "PLSDataBase.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PLSDesktopAuthanticationDB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PLSDesktopAuthanticationDB.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

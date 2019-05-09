@@ -1,0 +1,9 @@
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB.Models\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.deps.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB.Models\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB.Models\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.csproj.CoreCompileInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.AssemblyInfoInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.AssemblyInfo.cs
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSDesktopAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.csprojAssemblyReference.cache

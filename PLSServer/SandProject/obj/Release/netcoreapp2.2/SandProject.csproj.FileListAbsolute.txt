@@ -72,3 +72,11 @@ D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\obj\Release\
 D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\obj\Release\netcoreapp2.2\SandProject.csproj.CopyComplete
 D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\obj\Release\netcoreapp2.2\SandProject.dll
 D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\obj\Release\netcoreapp2.2\SandProject.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\SandProject\bin\Release\netcoreapp2.2\PLSDesktopAuthanticationDB.Models.pdb

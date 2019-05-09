@@ -1,0 +1,9 @@
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB.Models\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.deps.json
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB.Models\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB.Models\bin\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.pdb
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.csprojAssemblyReference.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.csproj.CoreCompileInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.AssemblyInfoInputs.cache
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.AssemblyInfo.cs
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.dll
+D:\Projects\PLS-Public-localization-services-\PLSServer\PLSMobileAuthanticationDB.Models\obj\Release\netcoreapp2.2\PLSMobileAuthanticationDB.Models.pdb

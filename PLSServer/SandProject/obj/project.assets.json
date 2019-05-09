@@ -3181,6 +3181,62 @@
           "bin/placeholder/PLSDataBase.Models.dll": {}
         }
       },
+      "PLSDesktopAuthanticationDB/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
+          "Nexmo.Csharp.Client": "3.3.1",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.1",
+          "PLSDesktopAuthanticationDB.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PLSDesktopAuthanticationDB.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PLSDesktopAuthanticationDB.dll": {}
+        }
+      },
+      "PLSDesktopAuthanticationDB.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/PLSDesktopAuthanticationDB.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PLSDesktopAuthanticationDB.Models.dll": {}
+        }
+      },
+      "PLSMobileAuthanticationDB/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
+          "Nexmo.Csharp.Client": "3.3.1",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.2.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.1",
+          "PLSMobileAuthanticationDB.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PLSMobileAuthanticationDB.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PLSMobileAuthanticationDB.dll": {}
+        }
+      },
+      "PLSMobileAuthanticationDB.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/PLSMobileAuthanticationDB.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PLSMobileAuthanticationDB.Models.dll": {}
+        }
+      },
       "PLSServer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -9568,6 +9624,26 @@
       "path": "../PLSDataBase.Models/PLSDataBase.Models.csproj",
       "msbuildProject": "../PLSDataBase.Models/PLSDataBase.Models.csproj"
     },
+    "PLSDesktopAuthanticationDB/1.0.0": {
+      "type": "project",
+      "path": "../PLSDesktopAuthanticationDB/PLSDesktopAuthanticationDB.csproj",
+      "msbuildProject": "../PLSDesktopAuthanticationDB/PLSDesktopAuthanticationDB.csproj"
+    },
+    "PLSDesktopAuthanticationDB.Models/1.0.0": {
+      "type": "project",
+      "path": "../PLSDesktopAuthanticationDB.Models/PLSDesktopAuthanticationDB.Models.csproj",
+      "msbuildProject": "../PLSDesktopAuthanticationDB.Models/PLSDesktopAuthanticationDB.Models.csproj"
+    },
+    "PLSMobileAuthanticationDB/1.0.0": {
+      "type": "project",
+      "path": "../PLSMobileAuthanticationDB/PLSMobileAuthanticationDB.csproj",
+      "msbuildProject": "../PLSMobileAuthanticationDB/PLSMobileAuthanticationDB.csproj"
+    },
+    "PLSMobileAuthanticationDB.Models/1.0.0": {
+      "type": "project",
+      "path": "../PLSMobileAuthanticationDB.Models/PLSMobileAuthanticationDB.Models.csproj",
+      "msbuildProject": "../PLSMobileAuthanticationDB.Models/PLSMobileAuthanticationDB.Models.csproj"
+    },
     "PLSServer/1.0.0": {
       "type": "project",
       "path": "../PLSServer/PLSServer.csproj",
@@ -9578,6 +9654,8 @@
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.NETCore.App >= 2.2.0",
       "PLSDataBase.Initilizer >= 1.0.0",
+      "PLSDesktopAuthanticationDB >= 1.0.0",
+      "PLSMobileAuthanticationDB >= 1.0.0",
       "PLSServer >= 1.0.0"
     ]
   },
@@ -9613,6 +9691,12 @@
           "projectReferences": {
             "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Initilizer\\PLSDataBase.Initilizer.csproj": {
               "projectPath": "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSDataBase.Initilizer\\PLSDataBase.Initilizer.csproj"
+            },
+            "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSDesktopAuthanticationDB\\PLSDesktopAuthanticationDB.csproj": {
+              "projectPath": "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSDesktopAuthanticationDB\\PLSDesktopAuthanticationDB.csproj"
+            },
+            "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSMobileAuthanticationDB\\PLSMobileAuthanticationDB.csproj": {
+              "projectPath": "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSMobileAuthanticationDB\\PLSMobileAuthanticationDB.csproj"
             },
             "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSServer\\PLSServer.csproj": {
               "projectPath": "D:\\Projects\\PLS-Public-localization-services-\\PLSServer\\PLSServer\\PLSServer.csproj"

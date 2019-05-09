@@ -18,7 +18,7 @@ namespace PLSDataBase.Models
         public int Id { get; set; }
 
         [Column("accessfailedcount")]
-        public int AccessFailedCount { get; set; }
+        public int AccessFailedCount { get; set; } = 0;
 
         [StringLength(10, MinimumLength = 10)]
         [Column("phonenumber")]

@@ -33,6 +33,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
 
 public class GpsActivity extends Activity implements SensorEventListener {
@@ -59,6 +60,12 @@ public class GpsActivity extends Activity implements SensorEventListener {
         context = this;
         sensorEventListener = this;
         setContentView(R.layout.activity_startgps);
+
+        if (!IsTheUserVerified()){
+            Intent intent = new Intent(this, LoadingScreenForGpsActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         startGpsActivityButton = findViewById(R.id.startgpsactivity);
 
@@ -229,6 +236,55 @@ public class GpsActivity extends Activity implements SensorEventListener {
             TextView tvLoc = (TextView) findViewById(R.id.position2);
             String xyzStr = String.format("Position: %f:%f %f ", x,y,z);
             tvLoc.setText(xyzStr);
+        }
+    }
+
+    private boolean IsTheUserVerified() {
+        String[] userInfo =  ReadFileInfo(fileName).split("\n");
+
+        String userPhoneNumber = userInfo[0];
+        String userToken = userInfo[1];
+
+        RequestTask requestTask = new RequestTask();
+
+        try {
+            int result = requestTask.execute(userPhoneNumber, userToken).get();
+
+            if (result != 200){
+                return false;
+            }
+
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+
+        return true;
+    }
+
+    class RequestTask extends AsyncTask<String, Integer, Integer>{
+
+        @Override
+        protected Integer doInBackground(String... uri) {
+            int  result = 0;
+            try {
+                URL reqURL = new URL("http://public-localization-services-authentication.azurewebsites.net/mobilelogin/" + uri[0]  + "/" + uri[1]); //the URL we will send the request to
+                HttpURLConnection request = (HttpURLConnection)(reqURL.openConnection());
+                request.setRequestMethod("GET");
+                request.connect();
+
+                result = request.getResponseCode();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            return result;
         }
     }
 

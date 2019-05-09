@@ -1,9 +1,0 @@
-D:\Projects\PLS-Public-localization-services-\PLSServer\PLSRegisterDB.Models\bin\Release\netcoreapp2.2\PLSMobileRegisterDB.Models.deps.json
-D:\Projects\PLS-Public-localization-services-\PLSServer\PLSRegisterDB.Models\bin\Release\netcoreapp2.2\PLSMobileRegisterDB.Models.dll
-D:\Projects\PLS-Public-localization-services-\PLSServer\PLSRegisterDB.Models\bin\Release\netcoreapp2.2\PLSMobileRegisterDB.Models.pdb
-D:\Projects\PLS-Public-localization-services-\PLSServer\PLSRegisterDB.Models\obj\Release\netcoreapp2.2\PLSMobileRegisterDB.Models.csprojAssemblyReference.cache
-D:\Projects\PLS-Public-localization-services-\PLSServer\PLSRegisterDB.Models\obj\Release\netcoreapp2.2\PLSMobileRegisterDB.Models.csproj.CoreCompileInputs.cache
-D:\Projects\PLS-Public-localization-services-\PLSServer\PLSRegisterDB.Models\obj\Release\netcoreapp2.2\PLSMobileRegisterDB.Models.AssemblyInfoInputs.cache
-D:\Projects\PLS-Public-localization-services-\PLSServer\PLSRegisterDB.Models\obj\Release\netcoreapp2.2\PLSMobileRegisterDB.Models.AssemblyInfo.cs
-D:\Projects\PLS-Public-localization-services-\PLSServer\PLSRegisterDB.Models\obj\Release\netcoreapp2.2\PLSMobileRegisterDB.Models.dll
-D:\Projects\PLS-Public-localization-services-\PLSServer\PLSRegisterDB.Models\obj\Release\netcoreapp2.2\PLSMobileRegisterDB.Models.pdb
