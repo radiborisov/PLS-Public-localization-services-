@@ -12,12 +12,12 @@ namespace PLSDataBase.Models
         public int Id { get; set; }
 
         [Required]
-        [Column("latitude")]
-        public double Latitude { get; set; }
-
-        [Required]
         [Column("longitude")]
         public double Longitude { get; set; }
+
+        [Required]
+        [Column("latitude")]
+        public double Latitude { get; set; }
 
         [Required]
         [Column("altitude")]

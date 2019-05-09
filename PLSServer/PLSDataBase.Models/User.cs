@@ -17,6 +17,9 @@ namespace PLSDataBase.Models
         [Column("id")]
         public int Id { get; set; }
 
+        [Column("accessfailedcount")]
+        public int AccessFailedCount { get; set; }
+
         [StringLength(10, MinimumLength = 10)]
         [Column("phonenumber")]
         public string PhoneNumber { get; set; }
@@ -29,6 +32,12 @@ namespace PLSDataBase.Models
 
         [Column("isindanger")]
         public bool IsInDanger { get; set; } = false;
+
+        [Column("lockoutenabled")]
+        public bool LockoutEnabled { get; set; } = false;
+
+        [Column("lockoutend")]
+        public DateTime LockoutEnd { get; set; }
 
         [Column("token")]
         public Guid Token { get; set; } = Guid.NewGuid();

@@ -1,8 +1,10 @@
-﻿using GMap.NET;
+﻿using AutoMapper;
+using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using Newtonsoft.Json;
+using PLSDesktopApi.MappingConfiguration;
 using PLSDesktopApi.Models.Location;
 using PLSDesktopApi.Models.User;
 using System;
@@ -19,12 +21,17 @@ namespace PLSDesktopApi
 {
     public partial class Form1 : Form
     {
-        List<CreateInputUser> users = new List<CreateInputUser>();
+        List<UserDto> users = new List<UserDto>();
         List<GMapMarker> gmapMarkers = new List<GMapMarker>();
 
         public Form1()
         {
             InitializeComponent();
+
+            Mapper.Initialize(config =>
+            {
+                config.AddProfile<PLSDesktopProfile>();
+            });
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -68,10 +75,10 @@ namespace PLSDesktopApi
 
                     if (lastLocationIndex >= 0)
                     {
-                       
+
 
                         AddMarkers(user, user.Locations[lastLocationIndex]);
-                    }              
+                    }
                 }
             }
             else
@@ -108,7 +115,7 @@ namespace PLSDesktopApi
 
         private void GetInformation()
         {
-            List<CreateInputUser> createInputUsers = new List<CreateInputUser>();
+            List<UserDto> createInputUsers = new List<UserDto>();
 
             int oldUsersCount = users.Count();
 
@@ -127,7 +134,7 @@ namespace PLSDesktopApi
                 result = reader.ReadToEnd();
             }
 
-            var userInput = JsonConvert.DeserializeObject<List<CreateInputUser>>(result);
+            var userInput = JsonConvert.DeserializeObject<List<UserDto>>(result);
 
             foreach (var user in userInput)
             {
@@ -191,9 +198,20 @@ namespace PLSDesktopApi
 
                 if (user.Locations.Count > 0)
                 {
-                    foreach (var location in user.Locations)
+                    for (int i = 0; i < user.Locations.Count; i++)
                     {
-                        AddMarkers(user, location);
+                        if (i > 0)
+                        {
+                            var lastUserLocation = user.Locations[i - 1];
+                            var currentUserLocation = user.Locations[i];
+
+                            if (lastUserLocation.Latitude == currentUserLocation.Latitude && lastUserLocation.Longitude == currentUserLocation.Longitude)
+                            {
+                                continue;
+                            }
+                        }
+
+                        AddMarkers(user, user.Locations[i]);
                     }
 
                     for (int i = 0; i < user.Locations.Count - 1; i++)
@@ -201,6 +219,19 @@ namespace PLSDesktopApi
                         if (i == user.Locations.Count - 1)
                         {
                             break;
+                        }
+
+
+
+                        if (i > 0)
+                        {
+                            var lastUserLocation = user.Locations[i - 1];
+                            var currentUserLocation = user.Locations[i];
+
+                            if (lastUserLocation.Latitude == currentUserLocation.Latitude && lastUserLocation.Longitude == currentUserLocation.Longitude)
+                            {
+                                continue;
+                            }
                         }
 
                         AddPolygonesLines(user, user.Locations[i], user.Locations[i + 1]);
@@ -212,7 +243,7 @@ namespace PLSDesktopApi
             }
         }
 
-        private void AddMarkers(CreateInputUser currentUser, LocationDto location)
+        private void AddMarkers(UserDto currentUser, LocationDto location)
         {
             StringBuilder sb = new StringBuilder();
             GMapMarker marker = new GMarkerGoogle(
@@ -224,7 +255,7 @@ namespace PLSDesktopApi
             gmapMarkers.Add(marker);
         }
 
-        private void AddPolygonesLines(CreateInputUser currentUser, LocationDto location1, LocationDto location2)
+        private void AddPolygonesLines(UserDto currentUser, LocationDto location1, LocationDto location2)
         {
             GMapOverlay polyOverlay = new GMapOverlay("polygons");
             List<PointLatLng> points = new List<PointLatLng>();
@@ -249,5 +280,128 @@ namespace PLSDesktopApi
             }
         }
 
+
+
+        private void SendPutRequestIsSavior(string phoneNumber, bool isSavior)
+        {
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://public-localization-services-desktop.azurewebsites.net/return/user");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "PUT";
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                var user = users.FirstOrDefault(u => u.PhoneNumber == phoneNumber);
+
+                var userDto = Mapper.Map<ChangeUsersRank>(user);
+                userDto.IsSavior = isSavior;
+
+                var jsonUser = JsonConvert.SerializeObject(userDto);
+
+                streamWriter.Write(jsonUser);
+            }
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var responseText = streamReader.ReadToEnd();
+                //Now you have your response.
+                //or false depending on information in the response
+
+            }
+        }
+
+
+        private void SendPutRequestIsInDanger(string phoneNumber, bool isInDanger)
+        {
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://public-localization-services-desktop.azurewebsites.net/return/user/" + phoneNumber);
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "PUT";
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                var userCondition = new ChangeUserCondition();
+                userCondition.IsInDanger = isInDanger;
+
+                var jsonUser = JsonConvert.SerializeObject(userCondition);
+
+                streamWriter.Write(jsonUser);
+            }
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var responseText = streamReader.ReadToEnd();
+                //Now you have your response.
+                //or false depending on information in the response
+
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void changeToSaviorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (userBox.SelectedIndex == 1)
+            {
+                return;
+            }
+
+            string phoneNumber = userBox.GetItemText(userBox.SelectedItem);
+
+            SendPutRequestIsSavior(phoneNumber, true);
+
+            GetInformation();
+
+            AddingMarkers();
+        }
+
+        private void changeToTouristToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (userBox.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            string phoneNumber = userBox.GetItemText(userBox.SelectedItem);
+
+            SendPutRequestIsSavior(phoneNumber, false);
+
+            GetInformation();
+
+            AddingMarkers();
+        }
+
+        private void changeUserConditionToSavedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (userBox.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            string phoneNumber = userBox.GetItemText(userBox.SelectedItem);
+
+            SendPutRequestIsInDanger(phoneNumber, false);
+
+            GetInformation();
+
+            AddingMarkers();
+        }
+
+        private void changeUserConditionToEmergencyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (userBox.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            string phoneNumber = userBox.GetItemText(userBox.SelectedItem);
+
+            SendPutRequestIsInDanger(phoneNumber, true);
+
+            GetInformation();
+
+            AddingMarkers();
+        }
     }
 }

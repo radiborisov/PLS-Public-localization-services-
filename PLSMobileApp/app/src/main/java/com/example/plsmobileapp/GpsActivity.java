@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -68,74 +69,75 @@ public class GpsActivity extends Activity implements SensorEventListener {
             public void onClick(View v) {
                 String[] userInfo = ReadFileInfo(fileName).split("\n");
 
-                if(userInfo.length < 2){
-                    return;
-                }
+        if(userInfo.length < 2){
+            return;
+        }
 
-                setContentView(R.layout.activity_gps);
+        setContentView(R.layout.activity_gps);
 
-                saveMeButton = findViewById(R.id.saveMeButton);
+        saveMeButton = findViewById(R.id.saveMeButton);
 
-                phoneNumber = userInfo[0];
-                token = userInfo[1];
+        phoneNumber = userInfo[0];
+        token = userInfo[1];
 
-                LocationManager locationManager = (LocationManager) context.getSystemService(LOCATION_SERVICE);
+        LocationManager locationManager = (LocationManager) context.getSystemService(LOCATION_SERVICE);
 
-                // Define a listener that responds to location updates
-                LocationListener locationListener = new LocationListener() {
-                    public void onLocationChanged(Location loc) {
-                        // Called when a new location is found by the network location provider.
-                        String locStr = String.format("%s %f:%f (%f meters)", loc.getProvider(),
-                                loc.getLatitude(), loc.getLongitude(), loc.getAccuracy());
-                        TextView tvLoc = (TextView) findViewById(R.id.position1);
-                        tvLoc.setText(locStr);
-                        new SendLocation().execute(loc.getLongitude(), loc.getLatitude(), loc.getAltitude());
-                        Log.v("Gibbons", locStr);
-                    }
+        // Define a listener that responds to location updates
+        LocationListener locationListener = new LocationListener() {
+            public void onLocationChanged(Location loc) {
+                // Called when a new location is found by the network location provider.
+                String locStr = String.format("%s %f:%f (%f meters)", loc.getProvider(),
+                        loc.getLatitude(), loc.getLongitude(), loc.getAccuracy());
+                TextView tvLoc = (TextView) findViewById(R.id.position1);
+                tvLoc.setText(locStr);
+                new SendLocation().execute(loc.getLongitude(), loc.getLatitude(), loc.getAltitude());
+                Log.v("Gibbons", locStr);
+            }
 
-                    public void onStatusChanged(String provider, int status, Bundle extras) {
-                        Log.v("Gibbons", "location onStatusChanged() called");
-                    }
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+                Log.v("Gibbons", "location onStatusChanged() called");
+            }
 
-                    public void onProviderEnabled(String provider) {
-                        Log.v("Gibbons", "location onProviderEnabled() called");
-                    }
+            public void onProviderEnabled(String provider) {
+                Log.v("Gibbons", "location onProviderEnabled() called");
+            }
 
-                    public void onProviderDisabled(String provider) {
-                        Log.v("Gibbons", "location onProviderDisabled() called");
-                    }
-                };
+            public void onProviderDisabled(String provider) {
+                Log.v("Gibbons", "location onProviderDisabled() called");
+            }
+        };
 
-                // Register the listener with the Location Manager to receive location updates
-                Log.v("Gibbons", "setting location updates from network provider");
-                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
-                }
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 50, locationListener);
-                Log.v("Gibbons","setting location updates from GPS provider");
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 50, locationListener);
+        // Register the listener with the Location Manager to receive location updates
+        Log.v("Gibbons", "setting location updates from network provider");
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 20, locationListener);
+        Log.v("Gibbons","setting location updates from GPS provider");
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 20, locationListener);
 
 
-                senSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-                senAccelerometer = senSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-                senSensorManager.registerListener(sensorEventListener, senAccelerometer , SensorManager.SENSOR_DELAY_NORMAL);
 
-                saveMeButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(GpsActivity.this, PopEmergencyWindow.class);
-                        startActivity(intent);
-                    }
-                });
+        senSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        senAccelerometer = senSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        senSensorManager.registerListener(sensorEventListener, senAccelerometer , SensorManager.SENSOR_DELAY_NORMAL);
+
+        saveMeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GpsActivity.this, PopEmergencyWindow.class);
+                startActivity(intent);
             }
         });
+    }
+});
     }
 
     private String ReadFileInfo(String fileName){
@@ -161,7 +163,7 @@ public class GpsActivity extends Activity implements SensorEventListener {
             try{
                 return sendLocation(doubles[0], doubles[1], doubles[2]);
             }catch (IOException e ){
-
+                Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show();
                 return e.getMessage();
             }
             catch (JSONException ex) {

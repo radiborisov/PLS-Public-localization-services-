@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -82,10 +85,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MappingConfiguration\PLSDesktopProfile.cs" />
     <Compile Include="Models\Colors\SeeThroughPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Models\User\CreateInputUser.cs" />
+    <Compile Include="Models\User\ChangeUserCondition.cs" />
+    <Compile Include="Models\User\ChangeUsersRank.cs" />
+    <Compile Include="Models\User\UserDto.cs" />
     <Compile Include="Models\Location\LocationDto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

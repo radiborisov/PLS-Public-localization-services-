@@ -183,3 +183,6 @@ D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PL
 D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.CopyComplete
 D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe
 D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.pdb
+D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\AutoMapper.dll
+D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\AutoMapper.pdb
+D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\AutoMapper.xml

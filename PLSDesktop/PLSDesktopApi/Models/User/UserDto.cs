@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PLSDesktopApi.Models.User
 {
-    public class CreateInputUser
+    public class UserDto
     {
         public string PhoneNumber { get; set; }
 
