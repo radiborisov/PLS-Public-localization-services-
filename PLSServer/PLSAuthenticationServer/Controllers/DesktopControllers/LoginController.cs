@@ -31,7 +31,7 @@ namespace PLSAuthenticationServer.Controllers.DesktopControllers
         {
             if (!this.context.PLSDesktopUsers.Any(u => u.Username == username))
             {
-                return StatusCode(404);
+                return "Not found";
             }
             else
             {

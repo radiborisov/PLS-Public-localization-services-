@@ -61,12 +61,6 @@ public class GpsActivity extends Activity implements SensorEventListener {
         sensorEventListener = this;
         setContentView(R.layout.activity_startgps);
 
-        if (!IsTheUserVerified()){
-            Intent intent = new Intent(this, LoadingScreenForGpsActivity.class);
-            startActivity(intent);
-            finish();
-        }
-
         startGpsActivityButton = findViewById(R.id.startgpsactivity);
 
 
@@ -76,9 +70,11 @@ public class GpsActivity extends Activity implements SensorEventListener {
             public void onClick(View v) {
                 String[] userInfo = ReadFileInfo(fileName).split("\n");
 
-        if(userInfo.length < 2){
-            return;
-        }
+                if (!IsTheUserVerified()){
+                    Intent intent = new Intent(context, GpsActivity.class);
+                    startActivity(intent);
+                   return;
+                }
 
         setContentView(R.layout.activity_gps);
 

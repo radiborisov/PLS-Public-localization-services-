@@ -29,7 +29,7 @@ namespace PLSServerForDesktop.Controllers
         }
 
         // GET api/values
-        [HttpGet("secretKey")]
+        [HttpGet("{secretKey}")]
         public ActionResult<List<CreateUserAllView>> Get(string secretKey)
         {
             if (!this.dBContext.PLSDesktopUsers.Any(x => x.SecretKey.ToString() == secretKey))
@@ -49,14 +49,19 @@ namespace PLSServerForDesktop.Controllers
                 .ToList();
 
             return userLocations;
-        }                                                       
-                                                                
+        }
+
         // POST api/values                                      
-        [HttpPost]                                              
+        [HttpPost]
         // PUT api/values/5                                     
-        [HttpPut]                                       
-        public ActionResult<User> Put([FromBody] PutUserView userInfo)
+        [HttpPut("{secretKey}")]                                       
+        public ActionResult<User> Put(string secretKey,[FromBody] PutUserView userInfo)
         {
+            if (!this.dBContext.PLSDesktopUsers.Any(x => x.SecretKey.ToString() == secretKey))
+            {
+                return StatusCode(404);
+            }
+
             if (!this.context.Users.Any(x => x.PhoneNumber == userInfo.PhoneNumber))
             {
                 return StatusCode(404);
@@ -71,9 +76,14 @@ namespace PLSServerForDesktop.Controllers
             return NoContent();
         }
 
-        [HttpPut("{phoneNumber}")]
-        public ActionResult<User> Put(string phoneNumber,[FromBody] PutChangeUserConditionView userInfo)
+        [HttpPut("{phoneNumber}/{secretkey}")]
+        public ActionResult<User> Put(string phoneNumber,string secretKey,[FromBody] PutChangeUserConditionView userInfo)
         {
+            if (!this.dBContext.PLSDesktopUsers.Any(x => x.SecretKey.ToString() == secretKey))
+            {
+                return StatusCode(404);
+            }
+
             if (!this.context.Users.Any(x => x.PhoneNumber == phoneNumber))
             {
                 return StatusCode(404);

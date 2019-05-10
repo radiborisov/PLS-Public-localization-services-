@@ -74,7 +74,6 @@ D:\Project\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\
 D:\Project\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.exe
 D:\Project\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.pdb
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csprojAssemblyReference.cache
-D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.Form1.resources
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.Properties.Resources.resources
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.GenerateResource.cache
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.csproj.CoreCompileInputs.cache
@@ -186,3 +185,4 @@ D:\Projects\Project Localization\PLS-Public-localization-services-\PLSDesktop\PL
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\AutoMapper.dll
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\AutoMapper.pdb
 D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\bin\Debug\AutoMapper.xml
+D:\Projects\PLS-Public-localization-services-\PLSDesktop\PLSDesktopApi\obj\Debug\PLSDesktopApi.PLSDesktopApp.resources

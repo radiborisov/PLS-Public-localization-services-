@@ -42,19 +42,19 @@ namespace SandProject
             //    //}
             //}
 
-            using (PLSDesktopAuthanticationDBContext authanticationDBContext = new PLSDesktopAuthanticationDBContext())
-            {
-                //authanticationDBContext.Database.EnsureDeleted();
-                //authanticationDBContext.Database.EnsureCreated();
-                var user = new PLSDesktopUser
-                {
-                    Username = "admin",
-                    Password = "RedCross32"
-                };
+            //using (PLSDesktopAuthanticationDBContext authanticationDBContext = new PLSDesktopAuthanticationDBContext())
+            //{
+            //    //authanticationDBContext.Database.EnsureDeleted();
+            //    //authanticationDBContext.Database.EnsureCreated();
+            //    var user = new PLSDesktopUser
+            //    {
+            //        Username = "admin",
+            //        Password = "RedCross32"
+            //    };
 
-                authanticationDBContext.PLSDesktopUsers.Add(user);
-                authanticationDBContext.SaveChanges();
-            }
+            //    authanticationDBContext.PLSDesktopUsers.Add(user);
+            //    authanticationDBContext.SaveChanges();
+            //}
 
         }
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Process;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import static android.os.Process.THREAD_PRIORITY_BACKGROUND;
+import static android.os.Process.THREAD_PRIORITY_MORE_FAVORABLE;
 
 public class PhoneVerificationActivity extends Activity {
 
@@ -73,7 +77,7 @@ public class PhoneVerificationActivity extends Activity {
                     String verifyCode = verificationCode.getText().toString();
 
                     SendVerification sendVerification = new SendVerification();
-                    sendVerification.execute(phoneNumber, verifyCode, secretKey);
+                    AsyncTask<String,Void,String> task = sendVerification.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR,phoneNumber, verifyCode, secretKey);
 
                     Intent intent = new Intent(context, GpsActivity.class);
                     startActivity(intent);
@@ -120,6 +124,7 @@ public class PhoneVerificationActivity extends Activity {
     private class SendVerification extends AsyncTask<String,Void,String> {
         @Override
         protected String doInBackground(String... strings) {
+            Process.setThreadPriority(THREAD_PRIORITY_BACKGROUND + THREAD_PRIORITY_MORE_FAVORABLE);
             try{
                 return sendVerification(strings[0], strings[1], strings[2]);
             }catch (IOException e ){

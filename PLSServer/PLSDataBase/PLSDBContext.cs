@@ -8,7 +8,7 @@ namespace PLSDataBase
     public class PLSDBContext : DbContext
     {
 
-        public PLSDBContext()
+        protected PLSDBContext()
         {
         }
 

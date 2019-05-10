@@ -9,11 +9,11 @@ namespace PLSMobileAuthanticationDB
 {
     public class PLSMobileAuthanticationDBContext : DbContext
     {
-        public PLSMobileAuthanticationDBContext(DbContextOptions options) : base(options)
+        public PLSMobileAuthanticationDBContext(DbContextOptions<PLSMobileAuthanticationDBContext> options) : base(options)
         {
         }
 
-        public PLSMobileAuthanticationDBContext()
+        protected PLSMobileAuthanticationDBContext()
         {
         }
 

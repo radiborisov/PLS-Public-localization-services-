@@ -13,7 +13,7 @@ namespace PLSDesktopAuthanticationDB
         {
         }
 
-        public PLSDesktopAuthanticationDBContext()
+        protected PLSDesktopAuthanticationDBContext()
         {
         }
 
