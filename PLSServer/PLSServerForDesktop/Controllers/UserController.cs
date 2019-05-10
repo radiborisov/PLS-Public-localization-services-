@@ -43,7 +43,9 @@ namespace PLSServerForDesktop.Controllers
                     x.PhoneNumber,
                     x.IsSavior,
                     x.IsOnline,
-                    Locations = x.Locations.Where(l => l.Date.Day == DateTime.Now.Day)
+                    x.IsInDanger,
+                    Messages = x.UserEmergencyMessages.Where(d => d.Created.Date.Day == DateTime.Now.Day).Select(m => m.Message).ToList(),
+                    Locations = x.Locations.Where(l => l.Date.Day == DateTime.Now.Day).ToList()
                 })
                 .ProjectTo<CreateUserAllView>(this.mapper.ConfigurationProvider)
                 .ToList();

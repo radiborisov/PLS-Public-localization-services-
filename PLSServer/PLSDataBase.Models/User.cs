@@ -11,6 +11,7 @@ namespace PLSDataBase.Models
         public User()
         {
             Locations = new List<Location>();
+            UserEmergencyMessages = new List<UserEmergencyMessage>();
         }
 
         [Key]
@@ -46,5 +47,7 @@ namespace PLSDataBase.Models
         public Guid Secret { get; set; } = Guid.NewGuid();
 
         public List<Location> Locations { get; set; }
+
+        public List<UserEmergencyMessage> UserEmergencyMessages { get; set; }
     }
 }

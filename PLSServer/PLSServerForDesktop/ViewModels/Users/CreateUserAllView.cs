@@ -12,6 +12,8 @@ namespace PLSServerForDesktop.ViewModels.Users
 
         public bool IsOnline { get; set; }
 
+        public List<UserEmergencyMessage> userEmergencyMessages { get; set; } 
+
         public List<CreateLocationAllView> Locations { get; set; }
     }
 }

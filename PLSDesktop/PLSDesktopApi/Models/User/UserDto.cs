@@ -17,7 +17,11 @@ namespace PLSDesktopApi.Models.User
 
         public bool IsOnline { get; set; }
 
+        public bool IsInDanger { get; set; }
+
         public GMarkerGoogleType Marker { get => SetMarker();}
+
+        public List<string> EmergencyMessages { get; set; }
 
         public List<LocationDto> Locations { get; set; }
 
@@ -25,11 +29,15 @@ namespace PLSDesktopApi.Models.User
         {
             if (IsSavior)
             {
+                return GMarkerGoogleType.blue_small;
+            }
+            else if (IsInDanger)
+            {
                 return GMarkerGoogleType.red_small;
             }
             else
             {
-                return GMarkerGoogleType.blue_small;
+                return GMarkerGoogleType.green_small;
             }
         }
     }

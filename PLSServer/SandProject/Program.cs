@@ -20,11 +20,11 @@ namespace SandProject
     {
         static void Main(string[] args)
         {
-            //using (PLSDBContext context = new PLSDBContext())
-            //{
-            //    Console.WriteLine(DbInitilizer.ResetDataBase(context));
+            using (PLSDBContext context = new PLSDBContext())
+            {
+                Console.WriteLine(DbInitilizer.ResetDataBase(context));
 
-            //}
+            }
 
             //using (PLSMobileAuthanticationDBContext dBContext = new PLSMobileAuthanticationDBContext())
             //{

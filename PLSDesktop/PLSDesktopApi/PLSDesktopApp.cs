@@ -29,17 +29,38 @@ namespace PLSDesktopApi
         {
             InitializeComponent();
 
+            userBox.DrawMode = DrawMode.OwnerDrawFixed;
+            userBox.DrawItem += new DrawItemEventHandler(userBox_DrawItem);
+
+
             Mapper.Initialize(config =>
             {
                 config.AddProfile<PLSDesktopProfile>();
             });
         }
 
+        private void userBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+
+            // Draw the background of the ListBox control for each item.
+            e.DrawBackground();
+            Brush myBrush = Brushes.Gray; //or whatever...
+                                          // Draw the current item text based on the current 
+                                          // Font and the custom brush settings.
+                                          //
+            e.Graphics.DrawString(((ListBox)sender).Items[e.Index].ToString(),
+                  e.Font, myBrush, e.Bounds, StringFormat.GenericDefault);
+            // If the ListBox has focus, draw a focus rectangle 
+            // around the selected item.
+            //
+            e.DrawFocusRectangle();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             GMapOverlay markers = new GMapOverlay("markers");
 
-            VisualiseMarkers(markers);       
+            VisualiseMarkers(markers);
         }
 
         private void gMapControl1_Load(object sender, EventArgs e)
@@ -184,7 +205,9 @@ namespace PLSDesktopApi
                     if (currentUser.Locations.Count - 1 >= 0)
                     {
                         var location = currentUser.Locations[currentUser.Locations.Count - 1];
+                        
                         AddMarkers(currentUser, location);
+                        
                     }
                 }
 
@@ -196,7 +219,16 @@ namespace PLSDesktopApi
 
                 if (user.Locations.Count > 0)
                 {
-                    for (int i = 0; i < user.Locations.Count; i++)
+
+                    if (user.Locations.Count >= 1)
+                    {
+                        var location = user.Locations[0];
+
+                        gMapControl1.Position = new PointLatLng(location.Latitude, location.Longitude);
+                        AddColeredMarker(user, location, GMarkerGoogleType.red_small);
+                    }
+
+                    for (int i = 1; i < user.Locations.Count - 1; i++)
                     {
                         if (i > 0)
                         {
@@ -209,8 +241,18 @@ namespace PLSDesktopApi
                             }
                         }
 
-                        AddMarkers(user, user.Locations[i]);
+                        AddColeredMarker(user, user.Locations[i], GMarkerGoogleType.blue_small);
                     }
+
+                    if (user.Locations.Count >= 2)
+                    {
+                        var location = user.Locations[user.Locations.Count - 1];
+
+                        gMapControl1.Position = new PointLatLng(location.Latitude, location.Longitude);
+                        AddColeredMarker(user, location, GMarkerGoogleType.green_small);
+
+                    }
+
 
                     for (int i = 0; i < user.Locations.Count - 1; i++)
                     {
@@ -239,6 +281,19 @@ namespace PLSDesktopApi
                     VisualiseMarkers(markers);
                 }
             }
+        }
+
+        private void AddColeredMarker(UserDto currentUser, LocationDto location, GMarkerGoogleType gMarker)
+        {
+            StringBuilder sb = new StringBuilder();
+            GMapMarker marker = new GMarkerGoogle(
+                            new PointLatLng(location.Latitude, location.Longitude),
+                            gMarker
+                            );
+            sb.AppendLine(currentUser.PhoneNumber);
+            sb.AppendLine($"Longitude: {location.Longitude} , Latitude: {location.Latitude} , Altitude: {location.Altitude} | Date {location.Date.ToString("dd-MM-yyyy HH:mm:ss")}");
+            marker.ToolTipText = sb.ToString().TrimEnd();
+            gmapMarkers.Add(marker);
         }
 
         private void AddMarkers(UserDto currentUser, LocationDto location)
@@ -282,7 +337,7 @@ namespace PLSDesktopApi
 
         private void SendPutRequestIsSavior(string phoneNumber, bool isSavior)
         {
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://public-localization-services-desktop.azurewebsites.net/return/user" + secretKey);
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://public-localization-services-desktop.azurewebsites.net/return/user/" + secretKey);
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "PUT";
 
@@ -426,7 +481,8 @@ namespace PLSDesktopApi
             if (secretKey.ToLower().Contains("user is locked"))
             {
                 textBox5.AppendText("User is locked wait 5 minutes");
-            }else if (secretKey.ToLower() == "not found")
+            }
+            else if (secretKey.ToLower() == "not found")
             {
                 textBox5.AppendText("Wrong username or password");
             }

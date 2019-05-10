@@ -18,5 +18,8 @@ namespace PLSDataBase.Models
 
         [Column("message")]
         public string Message { get; set; }
+
+        [Column("created")]
+        public DateTime Created { get; set; } = DateTime.Now;
     }
 }
